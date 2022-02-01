@@ -1,4 +1,4 @@
-import 'package:aplikasiditonton/data/datasources/db/database_helper.dart';
+import 'package:aplikasiditonton/data/datasources/db/tv/database_helper.dart';
 import 'package:aplikasiditonton/data/datasources/movie_local_data_source.dart';
 import 'package:aplikasiditonton/data/datasources/movie_remote_data_source.dart';
 import 'package:aplikasiditonton/data/repositories/movie_repository_impl.dart';

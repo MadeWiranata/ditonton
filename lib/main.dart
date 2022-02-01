@@ -33,6 +33,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:aplikasiditonton/injection.dart' as di;
 import 'package:aplikasiditonton/injection_tv.dart' as tv;
+import 'package:aplikasiditonton/data/datasources/tv/tv_local_data_source.dart';
 
 void main() {
   di.init();
@@ -117,6 +118,7 @@ class MyApp extends StatelessWidget {
             case SearchPage.ROUTE_NAME:
               return CupertinoPageRoute(builder: (_) => SearchPage());
             case WatchlistMoviesPage.ROUTE_NAME:
+              TVLocalDataSourceImpl.KelasApa = "movie";
               return MaterialPageRoute(builder: (_) => WatchlistMoviesPage());
             case AboutPage.ROUTE_NAME:
               return MaterialPageRoute(builder: (_) => AboutPage());
@@ -139,6 +141,7 @@ class MyApp extends StatelessWidget {
             case SearchPageTV.ROUTE_NAME:
               return CupertinoPageRoute(builder: (_) => SearchPageTV());
             case WatchlistTVPage.ROUTE_NAME:
+              TVLocalDataSourceImpl.KelasApa = "";
               return MaterialPageRoute(builder: (_) => WatchlistTVPage());
             case AboutPageTV.ROUTE_NAME:
               return MaterialPageRoute(builder: (_) => AboutPageTV());
