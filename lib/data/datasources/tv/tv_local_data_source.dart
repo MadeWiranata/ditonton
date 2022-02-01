@@ -10,14 +10,14 @@ abstract class TVLocalDataSource {
 }
 
 class TVLocalDataSourceImpl implements TVLocalDataSource {
+  static String KelasApa = "";
   final DatabaseHelper databaseHelper;
-
   TVLocalDataSourceImpl({required this.databaseHelper});
 
   @override
   Future<String> insertWatchlist(TVTable tv) async {
     try {
-      await databaseHelper.insertWatchlist(tv);
+      await databaseHelper.insertWatchlistTV(tv);
       return 'Added to Watchlist';
     } catch (e) {
       throw DatabaseException(e.toString());
@@ -27,7 +27,7 @@ class TVLocalDataSourceImpl implements TVLocalDataSource {
   @override
   Future<String> removeWatchlist(TVTable tv) async {
     try {
-      await databaseHelper.removeWatchlist(tv);
+      await databaseHelper.removeWatchlistTV(tv);
       return 'Removed from Watchlist';
     } catch (e) {
       throw DatabaseException(e.toString());
