@@ -62,7 +62,7 @@ class DatabaseHelper {
   }
 
   Future<int> insertWatchlistTV(TVTable tv) async {
-    TVLocalDataSourceImpl.KelasApa == "";
+    TVLocalDataSourceImpl.KelasApa = "";
     final db = await database;
     return await db!.insert(_tblWatchlist, tv.toJson());
   }
@@ -77,6 +77,7 @@ class DatabaseHelper {
   }
 
   Future<Map<String, dynamic>?> getTVById(int id) async {
+    TVLocalDataSourceImpl.KelasApa = "";
     final db = await database;
     final results = await db!.query(
       _tblWatchlist,
@@ -99,7 +100,7 @@ class DatabaseHelper {
   }
 
   Future<int> insertWatchlist(MovieTable movie) async {
-    TVLocalDataSourceImpl.KelasApa == "movie";
+    TVLocalDataSourceImpl.KelasApa = "movie";
     final db = await database;
     return await db!.insert(_tblWatchlist, movie.toJson());
   }
@@ -114,6 +115,7 @@ class DatabaseHelper {
   }
 
   Future<Map<String, dynamic>?> getMovieById(int id) async {
+    TVLocalDataSourceImpl.KelasApa = "movie";
     final db = await database;
     final results = await db!.query(
       _tblWatchlist,
