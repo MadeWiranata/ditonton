@@ -1,0 +1,31 @@
+{
+    "dates": {
+        "maximum": "2021-05-23",
+        "minimum": "2021-04-05"
+      },
+    "page": 1,
+    "results": [
+      {
+        "poster_path": "/path.jpg",
+        "popularity": 1.0,
+        "id": 1,
+        "backdrop_path": "/path.jpg",
+        "vote_average": 5.04,
+        "overview": "Overview",
+        "first_air_date": "2020-05-05",
+        "origin_country": [
+          "US"
+        ],
+        "genre_ids": [
+          18,
+          9648
+        ],
+        "original_language": "en",
+        "vote_count": 133,
+        "name": "Pretty Little Liars",
+        "original_name": "Pretty Little Liars"
+      }
+    ],
+    "total_results": 192,
+    "total_pages": 10
+  }
