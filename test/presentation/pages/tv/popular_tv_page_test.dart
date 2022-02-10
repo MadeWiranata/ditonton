@@ -43,7 +43,7 @@ void main() {
   testWidgets('Page should display ListView when data is loaded',
       (WidgetTester tester) async {
     when(mockNotifier.state).thenReturn(RequestState.Loaded);
-    when(mockNotifier.Tv).thenReturn(<Tv>[]);
+    when(mockNotifier.tv).thenReturn(<Tv>[]);
 
     final listViewFinder = find.byType(ListView);
 
@@ -57,7 +57,7 @@ void main() {
     when(mockNotifier.state).thenReturn(RequestState.Error);
     when(mockNotifier.message).thenReturn('Error message');
 
-    final textFinder = find.byKey(Key('error_message'));
+    final textFinder = find.byKey(const Key('error_message'));
 
     await tester.pumpWidget(_makeTestableWidget(PopularTVPage()));
 

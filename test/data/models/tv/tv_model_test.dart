@@ -13,12 +13,12 @@ void main() {
     poster_path: 'poster_path',
     first_air_date: 'first_air_date',
     name: 'name',
-    voteAverage: 1,
+    voteAverage: 1.0,
     voteCount: 1,
   );
 
   final tTv = Tv(
-    backdrop_path: 'backdropPath',
+    backdrop_path: 'backdrop_path',
     genreIds: [1, 2, 3],
     id: 1,
     original_name: 'original_name',
@@ -27,7 +27,7 @@ void main() {
     poster_path: 'poster_path',
     first_air_date: 'first_air_date',
     name: 'name',
-    voteAverage: 1,
+    voteAverage: 1.0,
     voteCount: 1,
   );
 

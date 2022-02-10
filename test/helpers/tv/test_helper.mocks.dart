@@ -89,15 +89,15 @@ class MockTVRepository extends _i1.Mock implements _i6.TVRepository {
           as _i7.Future<_i2.Either<_i8.Failure, List<_i9.Tv>>>);
   @override
   _i7.Future<_i2.Either<_i8.Failure, String>> saveWatchlist(
-          _i10.TVDetail? TV) =>
-      (super.noSuchMethod(Invocation.method(#saveWatchlist, [TV]),
+          _i10.TVDetail? tv) =>
+      (super.noSuchMethod(Invocation.method(#saveWatchlist, [tv]),
               returnValue: Future<_i2.Either<_i8.Failure, String>>.value(
                   _FakeEither<_i8.Failure, String>()))
           as _i7.Future<_i2.Either<_i8.Failure, String>>);
   @override
   _i7.Future<_i2.Either<_i8.Failure, String>> removeWatchlist(
-          _i10.TVDetail? TV) =>
-      (super.noSuchMethod(Invocation.method(#removeWatchlist, [TV]),
+          _i10.TVDetail? tv) =>
+      (super.noSuchMethod(Invocation.method(#removeWatchlist, [tv]),
               returnValue: Future<_i2.Either<_i8.Failure, String>>.value(
                   _FakeEither<_i8.Failure, String>()))
           as _i7.Future<_i2.Either<_i8.Failure, String>>);
@@ -123,17 +123,17 @@ class MockTVRemoteDataSource extends _i1.Mock
   }
 
   @override
-  _i7.Future<List<_i12.TVModel>> getNowPlayingTVs() =>
+  _i7.Future<List<_i12.TVModel>> getNowPlayingTV() =>
       (super.noSuchMethod(Invocation.method(#getNowPlayingTVs, []),
               returnValue: Future<List<_i12.TVModel>>.value(<_i12.TVModel>[]))
           as _i7.Future<List<_i12.TVModel>>);
   @override
-  _i7.Future<List<_i12.TVModel>> getPopularTVs() =>
+  _i7.Future<List<_i12.TVModel>> getPopularTV() =>
       (super.noSuchMethod(Invocation.method(#getPopularTVs, []),
               returnValue: Future<List<_i12.TVModel>>.value(<_i12.TVModel>[]))
           as _i7.Future<List<_i12.TVModel>>);
   @override
-  _i7.Future<List<_i12.TVModel>> getTopRatedTVs() =>
+  _i7.Future<List<_i12.TVModel>> getTopRatedTV() =>
       (super.noSuchMethod(Invocation.method(#getTopRatedTVs, []),
               returnValue: Future<List<_i12.TVModel>>.value(<_i12.TVModel>[]))
           as _i7.Future<List<_i12.TVModel>>);
@@ -149,7 +149,7 @@ class MockTVRemoteDataSource extends _i1.Mock
               returnValue: Future<List<_i12.TVModel>>.value(<_i12.TVModel>[]))
           as _i7.Future<List<_i12.TVModel>>);
   @override
-  _i7.Future<List<_i12.TVModel>> searchTVs(String? query) =>
+  _i7.Future<List<_i12.TVModel>> searchTV(String? query) =>
       (super.noSuchMethod(Invocation.method(#searchTVs, [query]),
               returnValue: Future<List<_i12.TVModel>>.value(<_i12.TVModel>[]))
           as _i7.Future<List<_i12.TVModel>>);
@@ -164,20 +164,20 @@ class MockTVLocalDataSource extends _i1.Mock implements _i13.TVLocalDataSource {
   }
 
   @override
-  _i7.Future<String> insertWatchlist(_i14.TVTable? TV) =>
-      (super.noSuchMethod(Invocation.method(#insertWatchlist, [TV]),
+  _i7.Future<String> insertWatchlist(_i14.TVTable? tv) =>
+      (super.noSuchMethod(Invocation.method(#insertWatchlist, [tv]),
           returnValue: Future<String>.value('')) as _i7.Future<String>);
   @override
-  _i7.Future<String> removeWatchlist(_i14.TVTable? TV) =>
-      (super.noSuchMethod(Invocation.method(#removeWatchlist, [TV]),
+  _i7.Future<String> removeWatchlist(_i14.TVTable? tv) =>
+      (super.noSuchMethod(Invocation.method(#removeWatchlist, [tv]),
           returnValue: Future<String>.value('')) as _i7.Future<String>);
   @override
   _i7.Future<_i14.TVTable?> getTVById(int? id) => (super.noSuchMethod(
       Invocation.method(#getTVById, [id]),
       returnValue: Future<_i14.TVTable?>.value()) as _i7.Future<_i14.TVTable?>);
   @override
-  _i7.Future<List<_i14.TVTable>> getWatchlistTVs() =>
-      (super.noSuchMethod(Invocation.method(#getWatchlistTVs, []),
+  _i7.Future<List<_i14.TVTable>> getWatchlistTV() =>
+      (super.noSuchMethod(Invocation.method(#getWatchlistTV, []),
               returnValue: Future<List<_i14.TVTable>>.value(<_i14.TVTable>[]))
           as _i7.Future<List<_i14.TVTable>>);
 }
@@ -196,12 +196,12 @@ class MockDatabaseHelper extends _i1.Mock implements _i15.DatabaseHelper {
               returnValue: Future<_i16.Database?>.value())
           as _i7.Future<_i16.Database?>);
   @override
-  _i7.Future<int> insertWatchlistTV(_i14.TVTable? TV) =>
-      (super.noSuchMethod(Invocation.method(#insertWatchlist, [TV]),
+  _i7.Future<int> insertWatchlistTV(_i14.TVTable? tv) =>
+      (super.noSuchMethod(Invocation.method(#insertWatchlist, [tv]),
           returnValue: Future<int>.value(0)) as _i7.Future<int>);
   @override
-  _i7.Future<int> removeWatchlistTV(_i14.TVTable? TV) =>
-      (super.noSuchMethod(Invocation.method(#removeWatchlist, [TV]),
+  _i7.Future<int> removeWatchlistTV(_i14.TVTable? tv) =>
+      (super.noSuchMethod(Invocation.method(#removeWatchlist, [tv]),
           returnValue: Future<int>.value(0)) as _i7.Future<int>);
   @override
   _i7.Future<Map<String, dynamic>?> getTVById(int? id) =>

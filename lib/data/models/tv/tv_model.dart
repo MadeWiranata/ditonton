@@ -20,7 +20,7 @@ class TVModel extends Equatable {
   final List<int> genreIds;
   final int id;
   final String original_name;
-  final String overview;
+  final String? overview;
   final double popularity;
   final String? poster_path;
   final String? first_air_date;
