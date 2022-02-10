@@ -9,23 +9,23 @@ import '../../../json_reader.dart';
 void main() {
   final tTVModel = TVModel(
     backdrop_path: "/path.jpg",
-    genreIds: [1, 2, 3, 4],
+    genreIds: [18, 9648],
     id: 1,
-    original_name: "original name",
-    overview: "overview",
+    original_name: "Pretty Little Liars",
+    overview: "Overview",
     popularity: 1.0,
     poster_path: "/path.jpg",
     first_air_date: "2020-05-05",
-    name: "name",
-    voteAverage: 1.0,
-    voteCount: 1,
+    name: "Pretty Little Liars",
+    voteAverage: 5.04,
+    voteCount: 133,
   );
   final tTVResponseModel = TVResponse(tvList: <TVModel>[tTVModel]);
   group('fromJson', () {
     test('should return a valid model from JSON', () async {
       // arrange
       final Map<String, dynamic> jsonMap =
-          json.decode(readJson('dummy_data/now_playing.json'));
+          json.decode(readJson('dummy_data/tv/on_the_air.json'));
       // act
       final result = TVResponse.fromJson(jsonMap);
       // assert
@@ -43,19 +43,17 @@ void main() {
       final expectedJsonMap = {
         "results": [
           {
-            "adult": false,
-            "backdrop_path": "/path.jpg",
-            "genre_ids": [1, 2, 3, 4],
-            "id": 1,
-            "original_title": "original name",
-            "overview": "overview",
-            "popularity": 1.0,
-            "poster_path": "/path.jpg",
-            "release_date": "2020-05-05",
-            "title": "Title",
-            "video": false,
-            "vote_average": 1.0,
-            "vote_count": 1
+            'backdrop_path': '/path.jpg',
+            'genre_ids': [18, 9648],
+            'id': 1,
+            'original_name': 'Pretty Little Liars',
+            'overview': 'Overview',
+            'popularity': 1.0,
+            'poster_path': '/path.jpg',
+            'first_air_date': '2020-05-05',
+            'name': 'Pretty Little Liars',
+            'vote_average': 5.04,
+            'vote_count': 133
           }
         ],
       };
