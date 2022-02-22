@@ -13,14 +13,14 @@ import 'watchlist_TV_notifier_test.mocks.dart';
 @GenerateMocks([GetWatchlistTV])
 void main() {
   late WatchlistTVNotifier provider;
-  late MockGetWatchlistTVs mockGetWatchlistTVs;
+  late MockGetWatchlistTV mockGetWatchlistTV;
   late int listenerCallCount;
 
   setUp(() {
     listenerCallCount = 0;
-    mockGetWatchlistTVs = MockGetWatchlistTVs();
+    mockGetWatchlistTV = MockGetWatchlistTV();
     provider = WatchlistTVNotifier(
-      getWatchlistTV: mockGetWatchlistTVs,
+      getWatchlistTV: mockGetWatchlistTV,
     )..addListener(() {
         listenerCallCount += 1;
       });
@@ -28,7 +28,7 @@ void main() {
 
   test('should change TVs data when data is gotten successfully', () async {
     // arrange
-    when(mockGetWatchlistTVs.execute())
+    when(mockGetWatchlistTV.execute())
         .thenAnswer((_) async => Right([testWatchlistTV]));
     // act
     await provider.fetchWatchlistTV();
@@ -40,7 +40,7 @@ void main() {
 
   test('should return error when data is unsuccessful', () async {
     // arrange
-    when(mockGetWatchlistTVs.execute())
+    when(mockGetWatchlistTV.execute())
         .thenAnswer((_) async => Left(DatabaseFailure("Can't get data")));
     // act
     await provider.fetchWatchlistTV();
