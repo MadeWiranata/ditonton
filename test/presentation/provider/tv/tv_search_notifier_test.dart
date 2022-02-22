@@ -13,13 +13,13 @@ import 'TV_search_notifier_test.mocks.dart';
 @GenerateMocks([SearchTV])
 void main() {
   late TVSearchNotifier provider;
-  late MockSearchTVs mockSearchTVs;
+  late MockSearchTV mockSearchTV;
   late int listenerCallCount;
 
   setUp(() {
     listenerCallCount = 0;
-    mockSearchTVs = MockSearchTVs();
-    provider = TVSearchNotifier(searchTV: mockSearchTVs)
+    mockSearchTV = MockSearchTV();
+    provider = TVSearchNotifier(searchTV: mockSearchTV)
       ..addListener(() {
         listenerCallCount += 1;
       });
@@ -45,7 +45,7 @@ void main() {
   group('search TVs', () {
     test('should change state to loading when usecase is called', () async {
       // arrange
-      when(mockSearchTVs.execute(tQuery))
+      when(mockSearchTV.execute(tQuery))
           .thenAnswer((_) async => Right(tTVList));
       // act
       provider.fetchTVSearch(tQuery);
@@ -56,7 +56,7 @@ void main() {
     test('should change search result data when data is gotten successfully',
         () async {
       // arrange
-      when(mockSearchTVs.execute(tQuery))
+      when(mockSearchTV.execute(tQuery))
           .thenAnswer((_) async => Right(tTVList));
       // act
       await provider.fetchTVSearch(tQuery);
@@ -68,7 +68,7 @@ void main() {
 
     test('should return error when data is unsuccessful', () async {
       // arrange
-      when(mockSearchTVs.execute(tQuery))
+      when(mockSearchTV.execute(tQuery))
           .thenAnswer((_) async => Left(ServerFailure('Server Failure')));
       // act
       await provider.fetchTVSearch(tQuery);

@@ -15,20 +15,20 @@ import 'TV_list_notifier_test.mocks.dart';
 @GenerateMocks([GetNowPlayingTV, GetPopularTV, GetTopRatedTV])
 void main() {
   late TVListNotifier provider;
-  late MockGetNowPlayingTVs mockGetNowPlayingTVs;
-  late MockGetPopularTVs mockGetPopularTVs;
-  late MockGetTopRatedTVs mockGetTopRatedTVs;
+  late MockGetNowPlayingTV mockGetNowPlayingTV;
+  late MockGetPopularTV mockGetPopularTV;
+  late MockGetTopRatedTV mockGetTopRatedTV;
   late int listenerCallCount;
 
   setUp(() {
     listenerCallCount = 0;
-    mockGetNowPlayingTVs = MockGetNowPlayingTVs();
-    mockGetPopularTVs = MockGetPopularTVs();
-    mockGetTopRatedTVs = MockGetTopRatedTVs();
+    mockGetNowPlayingTV = MockGetNowPlayingTV();
+    mockGetPopularTV = MockGetPopularTV();
+    mockGetTopRatedTV = MockGetTopRatedTV();
     provider = TVListNotifier(
-      getNowPlayingTV: mockGetNowPlayingTVs,
-      getPopularTV: mockGetPopularTVs,
-      getTopRatedTV: mockGetTopRatedTVs,
+      getNowPlayingTV: mockGetNowPlayingTV,
+      getPopularTV: mockGetPopularTV,
+      getTopRatedTV: mockGetTopRatedTV,
     )..addListener(() {
         listenerCallCount += 1;
       });
@@ -56,17 +56,17 @@ void main() {
 
     test('should get data from the usecase', () async {
       // arrange
-      when(mockGetNowPlayingTVs.execute())
+      when(mockGetNowPlayingTV.execute())
           .thenAnswer((_) async => Right(tTVList));
       // act
       provider.fetchNowPlayingTV();
       // assert
-      verify(mockGetNowPlayingTVs.execute());
+      verify(mockGetNowPlayingTV.execute());
     });
 
     test('should change state to Loading when usecase is called', () {
       // arrange
-      when(mockGetNowPlayingTVs.execute())
+      when(mockGetNowPlayingTV.execute())
           .thenAnswer((_) async => Right(tTVList));
       // act
       provider.fetchNowPlayingTV();
@@ -76,7 +76,7 @@ void main() {
 
     test('should change TVs when data is gotten successfully', () async {
       // arrange
-      when(mockGetNowPlayingTVs.execute())
+      when(mockGetNowPlayingTV.execute())
           .thenAnswer((_) async => Right(tTVList));
       // act
       await provider.fetchNowPlayingTV();
@@ -88,7 +88,7 @@ void main() {
 
     test('should return error when data is unsuccessful', () async {
       // arrange
-      when(mockGetNowPlayingTVs.execute())
+      when(mockGetNowPlayingTV.execute())
           .thenAnswer((_) async => Left(ServerFailure('Server Failure')));
       // act
       await provider.fetchNowPlayingTV();
@@ -102,7 +102,7 @@ void main() {
   group('popular TVs', () {
     test('should change state to loading when usecase is called', () async {
       // arrange
-      when(mockGetPopularTVs.execute()).thenAnswer((_) async => Right(tTVList));
+      when(mockGetPopularTV.execute()).thenAnswer((_) async => Right(tTVList));
       // act
       provider.fetchPopularTV();
       // assert
@@ -112,7 +112,7 @@ void main() {
 
     test('should change TVs data when data is gotten successfully', () async {
       // arrange
-      when(mockGetPopularTVs.execute()).thenAnswer((_) async => Right(tTVList));
+      when(mockGetPopularTV.execute()).thenAnswer((_) async => Right(tTVList));
       // act
       await provider.fetchPopularTV();
       // assert
@@ -123,7 +123,7 @@ void main() {
 
     test('should return error when data is unsuccessful', () async {
       // arrange
-      when(mockGetPopularTVs.execute())
+      when(mockGetPopularTV.execute())
           .thenAnswer((_) async => Left(ServerFailure('Server Failure')));
       // act
       await provider.fetchPopularTV();
@@ -137,8 +137,7 @@ void main() {
   group('top rated TVs', () {
     test('should change state to loading when usecase is called', () async {
       // arrange
-      when(mockGetTopRatedTVs.execute())
-          .thenAnswer((_) async => Right(tTVList));
+      when(mockGetTopRatedTV.execute()).thenAnswer((_) async => Right(tTVList));
       // act
       provider.fetchTopRatedTV();
       // assert
@@ -147,8 +146,7 @@ void main() {
 
     test('should change TVs data when data is gotten successfully', () async {
       // arrange
-      when(mockGetTopRatedTVs.execute())
-          .thenAnswer((_) async => Right(tTVList));
+      when(mockGetTopRatedTV.execute()).thenAnswer((_) async => Right(tTVList));
       // act
       await provider.fetchTopRatedTV();
       // assert
@@ -159,7 +157,7 @@ void main() {
 
     test('should return error when data is unsuccessful', () async {
       // arrange
-      when(mockGetTopRatedTVs.execute())
+      when(mockGetTopRatedTV.execute())
           .thenAnswer((_) async => Left(ServerFailure('Server Failure')));
       // act
       await provider.fetchTopRatedTV();

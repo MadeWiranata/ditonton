@@ -3,17 +3,16 @@ import 'package:aplikasiditonton/domain/entities/tv/tv.dart';
 import 'package:aplikasiditonton/domain/usecases/tv/get_tv_detail.dart';
 import 'package:aplikasiditonton/domain/usecases/tv/get_tv_recommendations.dart';
 import 'package:aplikasiditonton/common/failure.dart';
-import 'package:aplikasiditonton/domain/usecases/get_watchlist_status.dart';
-import 'package:aplikasiditonton/domain/usecases/remove_watchlist.dart';
-import 'package:aplikasiditonton/domain/usecases/save_watchlist.dart';
+import 'package:aplikasiditonton/domain/usecases/tv/get_watchlist_status.dart';
+import 'package:aplikasiditonton/domain/usecases/tv/remove_watchlist.dart';
+import 'package:aplikasiditonton/domain/usecases/tv/save_watchlist.dart';
 import 'package:aplikasiditonton/presentation/provider/tv/tv_detail_notifier.dart';
 import 'package:aplikasiditonton/common/state_enum.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-
 import '../../../dummy_data/tv/dummy_objects.dart';
-import 'TV_detail_notifier_test.mocks.dart';
+import 'tv_detail_notifier_test.mocks.dart';
 
 @GenerateMocks([
   GetTVDetail,
@@ -24,20 +23,20 @@ import 'TV_detail_notifier_test.mocks.dart';
 ])
 void main() {
   late TVDetailNotifier provider;
-  late MockGetTVDetail mockGetTVDetail;
-  late MockGetTVRecommendations mockGetTVRecommendations;
-  late MockGetWatchListStatus mockGetWatchlistStatus;
-  late MockSaveWatchlist mockSaveWatchlist;
-  late MockRemoveWatchlist mockRemoveWatchlist;
+  late MockGetDetailTV mockGetTVDetail;
+  late MockGetRecommendationsTV mockGetTVRecommendations;
+  late MockGetWatchListStatusTV mockGetWatchlistStatus;
+  late MockSaveWatchlistTV mockSaveWatchlist;
+  late MockRemoveWatchlistTV mockRemoveWatchlist;
   late int listenerCallCount;
 
   setUp(() {
     listenerCallCount = 0;
-    mockGetTVDetail = MockGetTVDetail();
-    mockGetTVRecommendations = MockGetTVRecommendations();
-    mockGetWatchlistStatus = MockGetWatchListStatus();
-    mockSaveWatchlist = MockSaveWatchlist();
-    mockRemoveWatchlist = MockRemoveWatchlist();
+    mockGetTVDetail = MockGetDetailTV();
+    mockGetTVRecommendations = MockGetRecommendationsTV();
+    mockGetWatchlistStatus = MockGetWatchListStatusTV();
+    mockSaveWatchlist = MockSaveWatchlistTV();
+    mockRemoveWatchlist = MockRemoveWatchlistTV();
     provider = TVDetailNotifier(
       getTVDetail: mockGetTVDetail,
       getTVRecommendations: mockGetTVRecommendations,

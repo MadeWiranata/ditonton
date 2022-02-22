@@ -12,14 +12,14 @@ import 'top_rated_tv_notifier_test.mocks.dart';
 
 @GenerateMocks([GetTopRatedTV])
 void main() {
-  late MockGetTopRatedTVs mockGetTopRatedTVs;
+  late MockGetTopRatedTV mockGetTopRatedTV;
   late TopRatedTVNotifier notifier;
   late int listenerCallCount;
 
   setUp(() {
     listenerCallCount = 0;
-    mockGetTopRatedTVs = MockGetTopRatedTVs();
-    notifier = TopRatedTVNotifier(getTopRatedTV: mockGetTopRatedTVs)
+    mockGetTopRatedTV = MockGetTopRatedTV();
+    notifier = TopRatedTVNotifier(getTopRatedTV: mockGetTopRatedTV)
       ..addListener(() {
         listenerCallCount++;
       });
@@ -43,7 +43,7 @@ void main() {
 
   test('should change state to loading when usecase is called', () async {
     // arrange
-    when(mockGetTopRatedTVs.execute()).thenAnswer((_) async => Right(tTVList));
+    when(mockGetTopRatedTV.execute()).thenAnswer((_) async => Right(tTVList));
     // act
     notifier.fetchTopRatedTV();
     // assert
@@ -53,7 +53,7 @@ void main() {
 
   test('should change TVs data when data is gotten successfully', () async {
     // arrange
-    when(mockGetTopRatedTVs.execute()).thenAnswer((_) async => Right(tTVList));
+    when(mockGetTopRatedTV.execute()).thenAnswer((_) async => Right(tTVList));
     // act
     await notifier.fetchTopRatedTV();
     // assert
@@ -64,7 +64,7 @@ void main() {
 
   test('should return error when data is unsuccessful', () async {
     // arrange
-    when(mockGetTopRatedTVs.execute())
+    when(mockGetTopRatedTV.execute())
         .thenAnswer((_) async => Left(ServerFailure('Server Failure')));
     // act
     await notifier.fetchTopRatedTV();
