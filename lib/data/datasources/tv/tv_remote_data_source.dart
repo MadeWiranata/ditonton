@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 import 'dart:convert';
 import 'package:aplikasiditonton/common/exception.dart';
 import 'package:aplikasiditonton/data/models/tv/tv_detail_model.dart';

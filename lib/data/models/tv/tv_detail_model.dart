@@ -1,9 +1,11 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:aplikasiditonton/data/models/tv/tv_genre_model.dart';
 import 'package:aplikasiditonton/domain/entities/tv/tv_detail.dart';
 import 'package:equatable/equatable.dart';
 
 class TVDetailResponse extends Equatable {
-  TVDetailResponse({
+  const TVDetailResponse({
     required this.backdrop_path,
     required this.first_air_date,
     required this.genres,
@@ -93,20 +95,21 @@ class TVDetailResponse extends Equatable {
 
   TVDetail toEntity() {
     return TVDetail(
-      backdrop_path: this.backdrop_path,
-      genres: this.genres.map((genre) => genre.toEntity()).toList(),
-      id: this.id,
-      original_name: this.original_name,
-      overview: this.overview,
-      poster_path: this.poster_path,
-      first_air_date: this.first_air_date,
-      name: this.name,
-      voteAverage: this.voteAverage,
-      voteCount: this.voteCount,
+      backdrop_path: backdrop_path,
+      genres: genres.map((genre) => genre.toEntity()).toList(),
+      id: id,
+      original_name: original_name,
+      overview: overview,
+      poster_path: poster_path,
+      first_air_date: first_air_date,
+      name: name,
+      voteAverage: voteAverage,
+      voteCount: voteCount,
     );
   }
 
   @override
+  // ignore: todo
   // TODO: implement props
   List<Object?> get props => [
         backdrop_path,

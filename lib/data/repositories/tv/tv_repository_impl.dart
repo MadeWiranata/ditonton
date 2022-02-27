@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'dart:io';
 
 import 'package:aplikasiditonton/data/datasources/tv/tv_local_data_source.dart';
@@ -100,6 +102,7 @@ class TVRepositoryImpl implements TVRepository {
     } on DatabaseException catch (e) {
       return Left(DatabaseFailure(e.message));
     } catch (e) {
+      // ignore: use_rethrow_when_possible
       throw e;
     }
   }

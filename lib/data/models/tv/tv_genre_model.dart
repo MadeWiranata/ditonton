@@ -1,8 +1,10 @@
+// ignore_for_file: unnecessary_this
+
 import 'package:aplikasiditonton/domain/entities/tv/genre.dart';
 import 'package:equatable/equatable.dart';
 
 class TVGenreModel extends Equatable {
-  TVGenreModel({
+  const TVGenreModel({
     required this.id,
     required this.name,
   });

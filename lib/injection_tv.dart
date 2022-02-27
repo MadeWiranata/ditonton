@@ -1,13 +1,12 @@
 import 'package:aplikasiditonton/data/datasources/db/tv/database_helper.dart';
-import 'package:aplikasiditonton/presentation/provider/tv/popular_tv_notifier.dart';
-import 'package:aplikasiditonton/presentation/provider/tv/top_rated_tv_notifier.dart';
-import 'package:aplikasiditonton/presentation/provider/tv/tv_detail_notifier.dart';
-import 'package:aplikasiditonton/presentation/provider/tv/tv_list_notifier.dart';
-import 'package:aplikasiditonton/presentation/provider/tv/tv_search_notifier.dart';
-import 'package:aplikasiditonton/presentation/provider/tv/watchlist_tv_notifier.dart';
+import 'package:aplikasiditonton/presentation/bloc/search_tv_bloc.dart';
+import 'package:aplikasiditonton/presentation/cubit/tv/tv_detail_cubit.dart';
+import 'package:aplikasiditonton/presentation/cubit/tv/tv_now_playing_cubit.dart';
+import 'package:aplikasiditonton/presentation/cubit/tv/tv_popular_cubit.dart';
+import 'package:aplikasiditonton/presentation/cubit/tv/tv_top_rated_cubit.dart';
+import 'package:aplikasiditonton/presentation/cubit/tv/tvwatchlist_cubit.dart';
 import 'package:http/http.dart' as http;
 import 'package:get_it/get_it.dart';
-
 import 'data/datasources/tv/tv_local_data_source.dart';
 import 'data/datasources/tv/tv_remote_data_source.dart';
 import 'data/repositories/tv/tv_repository_impl.dart';
@@ -28,39 +27,41 @@ final locator = GetIt.instance;
 void init() {
   // provider
   locator.registerFactory(
-    () => TVListNotifier(
-      getNowPlayingTV: locator(),
-      getPopularTV: locator(),
-      getTopRatedTV: locator(),
+    () => TVNowPlayingCubit(
+      nowPlayingTV: locator(),
     ),
   );
   locator.registerFactory(
-    () => TVDetailNotifier(
-      getTVDetail: locator(),
-      getTVRecommendations: locator(),
-      getWatchListStatus: locator(),
+    () => TVDetailCubit(
+      detailTV: locator(),
+      recommendationTV: locator(),
+      watchListStatus: locator(),
       saveWatchlist: locator(),
       removeWatchlist: locator(),
     ),
   );
   locator.registerFactory(
-    () => TVSearchNotifier(
-      searchTV: locator(),
-    ),
-  );
-  locator.registerFactory(
-    () => PopularTVNotifier(
+    () => SearchTVBloc(
       locator(),
     ),
   );
+
   locator.registerFactory(
-    () => TopRatedTVNotifier(
-      getTopRatedTV: locator(),
+    () => TVPopularCubit(
+      popularTV: locator(),
     ),
   );
   locator.registerFactory(
-    () => WatchlistTVNotifier(
-      getWatchlistTV: locator(),
+    () => TVTopRatedCubit(
+      topRatedTV: locator(),
+    ),
+  );
+  locator.registerFactory(
+    () => TVWatchlistCubit(
+      watchlist: locator(),
+      getWatchListStatus: locator(),
+      removeWatchlist: locator(),
+      saveWatchlist: locator(),
     ),
   );
 

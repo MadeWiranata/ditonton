@@ -2,7 +2,10 @@ import 'package:aplikasiditonton/common/constants.dart';
 import 'package:flutter/material.dart';
 
 class AboutPageTV extends StatelessWidget {
+  // ignore: constant_identifier_names
   static const ROUTE_NAME = '/about-tv';
+
+  const AboutPageTV({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +29,7 @@ class AboutPageTV extends StatelessWidget {
                 child: Container(
                   padding: const EdgeInsets.all(32.0),
                   color: kMikadoYellow,
-                  child: Text(
+                  child: const Text(
                     'ditonton merupakan sebuah aplikasi katalog film yang dikembangkan oleh Dicoding Indonesia sebagai contoh proyek aplikasi untuk kelas Menjadi Flutter Developer Expert.',
                     style: TextStyle(color: Colors.black87, fontSize: 16),
                     textAlign: TextAlign.justify,
@@ -38,7 +41,7 @@ class AboutPageTV extends StatelessWidget {
           SafeArea(
             child: IconButton(
               onPressed: () => Navigator.pop(context),
-              icon: Icon(Icons.arrow_back),
+              icon: const Icon(Icons.arrow_back),
             ),
           )
         ],

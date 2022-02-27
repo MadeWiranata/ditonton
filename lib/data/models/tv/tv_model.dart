@@ -1,8 +1,10 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:aplikasiditonton/domain/entities/tv/tv.dart';
 import 'package:equatable/equatable.dart';
 
 class TVModel extends Equatable {
-  TVModel({
+  const TVModel({
     required this.backdrop_path,
     required this.genreIds,
     required this.id,
@@ -58,17 +60,17 @@ class TVModel extends Equatable {
 
   Tv toEntity() {
     return Tv(
-      backdrop_path: this.backdrop_path,
-      genreIds: this.genreIds,
-      id: this.id,
-      original_name: this.original_name,
-      overview: this.overview,
-      popularity: this.popularity,
-      poster_path: this.poster_path,
-      first_air_date: this.first_air_date,
-      name: this.name,
-      voteAverage: this.voteAverage,
-      voteCount: this.voteCount,
+      backdrop_path: backdrop_path,
+      genreIds: genreIds,
+      id: id,
+      original_name: original_name,
+      overview: overview,
+      popularity: popularity,
+      poster_path: poster_path,
+      first_air_date: first_air_date,
+      name: name,
+      voteAverage: voteAverage,
+      voteCount: voteCount,
     );
   }
 

@@ -2,7 +2,7 @@ import 'package:aplikasiditonton/domain/entities/genre.dart';
 import 'package:equatable/equatable.dart';
 
 class GenreModel extends Equatable {
-  GenreModel({
+  const GenreModel({
     required this.id,
     required this.name,
   });
@@ -21,6 +21,7 @@ class GenreModel extends Equatable {
       };
 
   Genre toEntity() {
+    // ignore: unnecessary_this
     return Genre(id: this.id, name: this.name);
   }
 

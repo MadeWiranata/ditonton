@@ -1,5 +1,8 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:equatable/equatable.dart';
 
+// ignore: must_be_immutable
 class Tv extends Equatable {
   Tv({
     required this.backdrop_path,

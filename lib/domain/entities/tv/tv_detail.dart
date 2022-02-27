@@ -1,8 +1,10 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:aplikasiditonton/domain/entities/tv/genre.dart';
 import 'package:equatable/equatable.dart';
 
 class TVDetail extends Equatable {
-  TVDetail({
+  const TVDetail({
     required this.backdrop_path,
     required this.genres,
     required this.id,
