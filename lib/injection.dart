@@ -14,11 +14,11 @@ import 'package:aplikasiditonton/domain/usecases/remove_watchlist.dart';
 import 'package:aplikasiditonton/domain/usecases/save_watchlist.dart';
 import 'package:aplikasiditonton/domain/usecases/search_movies.dart';
 import 'package:aplikasiditonton/presentation/bloc/search_bloc.dart';
-import 'package:aplikasiditonton/presentation/provider/movie_detail_notifier.dart';
-import 'package:aplikasiditonton/presentation/provider/movie_list_notifier.dart';
-import 'package:aplikasiditonton/presentation/provider/popular_movies_notifier.dart';
-import 'package:aplikasiditonton/presentation/provider/top_rated_movies_notifier.dart';
-import 'package:aplikasiditonton/presentation/provider/watchlist_movie_notifier.dart';
+import 'package:aplikasiditonton/presentation/cubit/movie_detail_cubit.dart';
+import 'package:aplikasiditonton/presentation/cubit/movie_now_playing_cubit.dart';
+import 'package:aplikasiditonton/presentation/cubit/movie_popular_cubit.dart';
+import 'package:aplikasiditonton/presentation/cubit/movie_top_rated_cubit.dart';
+import 'package:aplikasiditonton/presentation/cubit/watchlist_cubit.dart';
 import 'package:http/http.dart' as http;
 import 'package:get_it/get_it.dart';
 
@@ -27,14 +27,30 @@ final locator = GetIt.instance;
 void init() {
   // provider
   locator.registerFactory(
-    () => MovieListNotifier(
-      getNowPlayingMovies: locator(),
-      getPopularMovies: locator(),
-      getTopRatedMovies: locator(),
+    () => MovieNowPlayingCubit(
+      nowPlayingMovies: locator(),
     ),
   );
   locator.registerFactory(
-    () => MovieDetailNotifier(
+    () => WatchlistCubit(
+      watchlist: locator(),
+      getWatchListStatus: locator(),
+      removeWatchlist: locator(),
+      saveWatchlist: locator(),
+    ),
+  );
+  locator.registerFactory(
+    () => MoviePopularCubit(
+      popularMovies: locator(),
+    ),
+  );
+  locator.registerFactory(
+    () => MovieTopRatedCubit(
+      topRatedMovies: locator(),
+    ),
+  );
+  locator.registerFactory(
+    () => MovieDetailCubit(
       getMovieDetail: locator(),
       getMovieRecommendations: locator(),
       getWatchListStatus: locator(),
@@ -45,26 +61,6 @@ void init() {
   locator.registerFactory(
     () => SearchBloc(
       locator(),
-    ),
-  );
-  //locator.registerFactory(
-  //() => MovieSearchNotifier(
-  //searchMovies: locator(),
-  // ),
-  // );
-  locator.registerFactory(
-    () => PopularMoviesNotifier(
-      locator(),
-    ),
-  );
-  locator.registerFactory(
-    () => TopRatedMoviesNotifier(
-      getTopRatedMovies: locator(),
-    ),
-  );
-  locator.registerFactory(
-    () => WatchlistMovieNotifier(
-      getWatchlistMovies: locator(),
     ),
   );
 

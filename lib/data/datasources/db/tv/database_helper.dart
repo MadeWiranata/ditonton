@@ -25,6 +25,7 @@ class DatabaseHelper {
   static const String _tblWatchlist = 'watchlist';
 
   Future<Database> _initDb() async {
+    // ignore: prefer_typing_uninitialized_variables
     var hk;
     if (TVLocalDataSourceImpl.KelasApa == "movie") {
       hk = "/ditonton.db";

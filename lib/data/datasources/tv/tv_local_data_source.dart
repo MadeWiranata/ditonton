@@ -10,6 +10,7 @@ abstract class TVLocalDataSource {
 }
 
 class TVLocalDataSourceImpl implements TVLocalDataSource {
+  // ignore: non_constant_identifier_names
   static String KelasApa = "";
   final DatabaseHelper databaseHelper;
   TVLocalDataSourceImpl({required this.databaseHelper});

@@ -1,12 +1,14 @@
-import 'package:aplikasiditonton/common/state_enum.dart';
 import 'package:aplikasiditonton/common/utils.dart';
-import 'package:aplikasiditonton/presentation/provider/tv/watchlist_tv_notifier.dart';
+import 'package:aplikasiditonton/presentation/cubit/tv/tvwatchlist_cubit.dart';
 import 'package:aplikasiditonton/presentation/widgets/tv/tv_card_list.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 
 class WatchlistTVPage extends StatefulWidget {
+  // ignore: constant_identifier_names
   static const ROUTE_NAME = '/watchlist-tv';
+  const WatchlistTVPage({Key? key}) : super(key: key);
 
   @override
   _WatchlistTVPageState createState() => _WatchlistTVPageState();
@@ -16,9 +18,11 @@ class _WatchlistTVPageState extends State<WatchlistTVPage> with RouteAware {
   @override
   void initState() {
     super.initState();
-    Future.microtask(() =>
-        Provider.of<WatchlistTVNotifier>(context, listen: false)
-            .fetchWatchlistTV());
+    Future.microtask(
+      () {
+        context.read<TVWatchlistCubit>().fetchWatchlist();
+      },
+    );
   }
 
   @override
@@ -27,37 +31,50 @@ class _WatchlistTVPageState extends State<WatchlistTVPage> with RouteAware {
     routeObserver.subscribe(this, ModalRoute.of(context)!);
   }
 
+  @override
   void didPopNext() {
-    Provider.of<WatchlistTVNotifier>(context, listen: false).fetchWatchlistTV();
+    Provider.of<TVWatchlistCubit>(context, listen: false).fetchWatchlist();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Watchlist'),
+        title: const Text('Watchlist'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Consumer<WatchlistTVNotifier>(
-          builder: (context, data, child) {
-            if (data.watchlistState == RequestState.Loading) {
-              return Center(
+        child: BlocBuilder<TVWatchlistCubit, TVWatchlistState>(
+          builder: (context, watchlist) {
+            if (watchlist is WatchlistInitial) {
+              return SizedBox(
+                height: MediaQuery.of(context).size.height / 2,
+                child: const Center(
+                  key: Key('empty_message'),
+                  child: Text(
+                    'Watchlist is Empty',
+                  ),
+                ),
+              );
+            } else if (watchlist is WatchlistLoading) {
+              return const Center(
                 child: CircularProgressIndicator(),
               );
-            } else if (data.watchlistState == RequestState.Loaded) {
+            } else if (watchlist is WatchlistLoaded) {
               return ListView.builder(
                 itemBuilder: (context, index) {
-                  final tv = data.watchlistTV[index];
+                  final tv = watchlist.watchlist[index];
                   return TVCard(tv);
                 },
-                itemCount: data.watchlistTV.length,
+                itemCount: watchlist.watchlist.length,
+              );
+            } else if (watchlist is WatchlistMessage) {
+              return Center(
+                key: const Key('error_message'),
+                child: Text(watchlist.watchlistMessage),
               );
             } else {
-              return Center(
-                key: Key('error_message'),
-                child: Text(data.message),
-              );
+              return const SizedBox();
             }
           },
         ),
