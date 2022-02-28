@@ -20,7 +20,7 @@ final testTV = Tv(
 
 final testTVList = [testTV];
 
-final testTVDetail = TVDetail(
+const testTVDetail = TVDetail(
   backdrop_path: 'backdrop_path',
   genres: [Genre(id: 1, name: 'Action')],
   id: 1,

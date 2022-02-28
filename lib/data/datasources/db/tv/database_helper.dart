@@ -5,7 +5,6 @@ import 'package:sqflite/sqflite.dart';
 import 'package:aplikasiditonton/data/datasources/tv/tv_local_data_source.dart';
 
 class DatabaseHelper {
-  static const String made = "";
   static DatabaseHelper? _databaseHelper;
   DatabaseHelper._instance() {
     _databaseHelper = this;

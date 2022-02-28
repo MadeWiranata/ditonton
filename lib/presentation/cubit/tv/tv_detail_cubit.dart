@@ -5,32 +5,22 @@ import 'package:aplikasiditonton/domain/usecases/tv/get_tv_recommendations.dart'
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/cupertino.dart';
-
-import '../../../domain/usecases/tv/get_watchlist_status.dart';
-import '../../../domain/usecases/tv/remove_watchlist.dart';
-import '../../../domain/usecases/tv/save_watchlist.dart';
 part 'tv_detail_state.dart';
 
 class TVDetailCubit extends Cubit<TVDetailState> {
-  final GetTVDetail detailTV;
-  final GetTVRecommendations recommendationTV;
-  final GetWatchListStatus watchListStatus;
-  final SaveWatchlist saveWatchlist;
-  final RemoveWatchlist removeWatchlist;
+  final GetTVDetail tvDetail;
+  final GetTVRecommendations tvRecommendations;
 
   TVDetailCubit({
-    required this.detailTV,
-    required this.recommendationTV,
-    required this.watchListStatus,
-    required this.saveWatchlist,
-    required this.removeWatchlist,
+    required this.tvDetail,
+    required this.tvRecommendations,
   }) : super(TVDetailInitial());
 
   void fetchDetailTv(int id) async {
     emit(TVDetailLoading());
 
-    final result = await detailTV.execute(id);
-    final recommendation = await recommendationTV.execute(id);
+    final result = await tvDetail.execute(id);
+    final recommendation = await tvRecommendations.execute(id);
 
     result.fold(
       (failure) async {
