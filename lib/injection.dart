@@ -53,9 +53,6 @@ void init() {
     () => MovieDetailCubit(
       getMovieDetail: locator(),
       getMovieRecommendations: locator(),
-      getWatchListStatus: locator(),
-      saveWatchlist: locator(),
-      removeWatchlist: locator(),
     ),
   );
   locator.registerFactory(

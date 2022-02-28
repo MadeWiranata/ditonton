@@ -33,11 +33,8 @@ void init() {
   );
   locator.registerFactory(
     () => TVDetailCubit(
-      detailTV: locator(),
-      recommendationTV: locator(),
-      watchListStatus: locator(),
-      saveWatchlist: locator(),
-      removeWatchlist: locator(),
+      tvDetail: locator(),
+      tvRecommendations: locator(),
     ),
   );
   locator.registerFactory(
