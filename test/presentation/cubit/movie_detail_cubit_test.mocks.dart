@@ -2,6 +2,8 @@
 // in movie/test/presentation/cubit/movie_detail_cubit_test.dart.
 // Do not manually edit this file.
 
+// ignore_for_file: unnecessary_overrides, duplicate_ignore
+
 import 'dart:async' as _i5;
 import 'package:aplikasiditonton/common/failure.dart' as _i6;
 import 'package:dartz/dartz.dart' as _i3;

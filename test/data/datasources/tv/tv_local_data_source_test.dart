@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_declarations
+
 import 'package:aplikasiditonton/common/exception.dart';
 import 'package:aplikasiditonton/data/datasources/tv/tv_local_data_source.dart';
 import 'package:flutter_test/flutter_test.dart';

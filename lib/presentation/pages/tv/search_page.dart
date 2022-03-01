@@ -1,7 +1,5 @@
 import 'package:aplikasiditonton/common/constants.dart';
 import 'package:aplikasiditonton/presentation/bloc/search_tv_bloc.dart';
-import 'package:aplikasiditonton/presentation/bloc/search_tv_event.dart';
-import 'package:aplikasiditonton/presentation/bloc/search_tv_state.dart';
 import 'package:aplikasiditonton/presentation/widgets/tv/tv_card_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -24,8 +22,9 @@ class SearchPageTV extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             TextField(
+              key: const Key('query_input'),
               onChanged: (query) {
-                context.read<SearchTVBloc>().add(OnQueryChanged(query));
+                context.read<SearchTVBloc>().add(OnChangeTvQuery(query));
               },
               decoration: const InputDecoration(
                 hintText: 'Search title',
@@ -41,26 +40,30 @@ class SearchPageTV extends StatelessWidget {
             ),
             BlocBuilder<SearchTVBloc, SearchTVState>(
               builder: (context, state) {
-                if (state is SearchLoading) {
+                if (state is SearchTVLoading) {
                   return const Center(
                     child: CircularProgressIndicator(),
                   );
-                } else if (state is SearchHasData) {
-                  final result = state.result;
+                } else if (state is SearchTVHasData) {
                   return Expanded(
                     child: ListView.builder(
                       padding: const EdgeInsets.all(8),
                       itemBuilder: (context, index) {
-                        final tv = result[index];
-                        return TVCard(tv);
+                        return TVCard(
+                          state.result[index],
+                        );
                       },
-                      itemCount: result.length,
+                      itemCount: state.result.length,
                     ),
                   );
-                } else if (state is SearchError) {
-                  return Expanded(
-                    child: Center(
-                      child: Text(state.message),
+                } else if (state is SearchTVError) {
+                  return SizedBox(
+                    height: MediaQuery.of(context).size.height / 2,
+                    child: const Center(
+                      key: Key('error_message'),
+                      child: Text(
+                        'Search Not Found',
+                      ),
                     ),
                   );
                 } else {

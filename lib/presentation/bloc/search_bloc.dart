@@ -1,31 +1,35 @@
 import 'package:aplikasiditonton/domain/usecases/search_movies.dart';
+import 'package:aplikasiditonton/domain/entities/movie.dart';
+import 'package:equatable/equatable.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rxdart/transformers.dart';
-import 'search_event.dart';
-import 'search_state.dart';
+part 'search_event.dart';
+part 'search_state.dart';
 
 class SearchBloc extends Bloc<SearchEvent, SearchState> {
-  final SearchMovies _searchMovies;
+  final SearchMovies searchMovies;
 
-  SearchBloc(this._searchMovies) : super(SearchEmpty()) {
-    on<OnQueryChanged>((event, emit) async {
+  SearchBloc({required this.searchMovies}) : super(SearchMoviesInitial()) {
+    on<OnChangeMovieQuery>((event, emit) async {
       final query = event.query;
 
-      emit(SearchLoading());
-      final result = await _searchMovies.execute(query);
+      emit(SearchMoviesLoading());
+
+      final result = await searchMovies.execute(query);
 
       result.fold(
         (failure) {
-          emit(SearchError(failure.message));
+          emit(SearchMoviesError(failure.message));
         },
-        (data) {
-          emit(SearchHasData(data));
+        (result) {
+          emit(SearchMoviesHasData(result));
         },
       );
-    }, transformer: debounce(const Duration(milliseconds: 500)));
+    }, transformer: _debounce(const Duration(milliseconds: 500)));
   }
-}
 
-EventTransformer<T> debounce<T>(Duration duration) {
-  return (events, mapper) => events.debounceTime(duration).flatMap(mapper);
+  EventTransformer<OnChangeMovieQuery> _debounce<OnChangeMovieQuery>(
+          Duration duration) =>
+      (events, mapper) => events.debounceTime(duration).flatMap(mapper);
 }

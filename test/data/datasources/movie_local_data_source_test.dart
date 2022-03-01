@@ -64,6 +64,7 @@ void main() {
   });
 
   group('Get Movie Detail By Id', () {
+    // ignore: prefer_const_declarations
     final tId = 1;
 
     test('should return Movie Detail Table when data is found', () async {

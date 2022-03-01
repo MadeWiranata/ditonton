@@ -20,11 +20,11 @@ import 'package:mockito/mockito.dart' as _i1;
 // ignore_for_file: unnecessary_parenthesis
 // ignore_for_file: camel_case_types
 
-class _FakeTvSeriesRepository_0 extends _i1.Fake implements _i2.TVRepository {}
+class _FakeTVRepository_0 extends _i1.Fake implements _i2.TVRepository {}
 
 class _FakeEither_1<L, R> extends _i1.Fake implements _i3.Either<L, R> {}
 
-/// A class which mocks [SearchTvSeries].
+/// A class which mocks [SearchTV].
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockSearchTV extends _i1.Mock implements _i4.SearchTV {
@@ -35,11 +35,14 @@ class MockSearchTV extends _i1.Mock implements _i4.SearchTV {
   @override
   _i2.TVRepository get repository =>
       (super.noSuchMethod(Invocation.getter(#repository),
-          returnValue: _FakeTvSeriesRepository_0()) as _i2.TVRepository);
+          returnValue: _FakeTVRepository_0()) as _i2.TVRepository);
   @override
   _i5.Future<_i3.Either<_i6.Failure, List<_i7.Tv>>> execute(String? query) =>
       (super.noSuchMethod(Invocation.method(#execute, [query]),
               returnValue: Future<_i3.Either<_i6.Failure, List<_i7.Tv>>>.value(
                   _FakeEither_1<_i6.Failure, List<_i7.Tv>>()))
           as _i5.Future<_i3.Either<_i6.Failure, List<_i7.Tv>>>);
+  @override
+  // ignore: unnecessary_overrides
+  String toString() => super.toString();
 }

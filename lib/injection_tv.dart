@@ -39,7 +39,7 @@ void init() {
   );
   locator.registerFactory(
     () => SearchTVBloc(
-      locator(),
+      searchTV: locator(),
     ),
   );
 

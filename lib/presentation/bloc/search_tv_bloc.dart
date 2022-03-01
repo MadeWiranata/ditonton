@@ -1,31 +1,35 @@
+import 'package:aplikasiditonton/domain/entities/tv/tv.dart';
 import 'package:aplikasiditonton/domain/usecases/tv/search_tv.dart';
-import 'package:aplikasiditonton/presentation/bloc/search_tv_event.dart';
-import 'package:aplikasiditonton/presentation/bloc/search_tv_state.dart';
 import 'package:bloc/bloc.dart';
+import 'package:equatable/equatable.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:rxdart/transformers.dart';
+part 'search_tv_event.dart';
+part 'search_tv_state.dart';
 
 class SearchTVBloc extends Bloc<SearchTVEvent, SearchTVState> {
-  final SearchTV _searchTV;
+  final SearchTV searchTV;
 
-  SearchTVBloc(this._searchTV) : super(SearchEmpty()) {
-    on<OnQueryChanged>((event, emit) async {
+  SearchTVBloc({required this.searchTV}) : super(SearchTVInitial()) {
+    on<OnChangeTvQuery>((event, emit) async {
       final query = event.query;
 
-      emit(SearchLoading());
-      final result = await _searchTV.execute(query);
+      emit(SearchTVLoading());
+
+      final result = await searchTV.execute(query);
 
       result.fold(
         (failure) {
-          emit(SearchError(failure.message));
+          emit(SearchTVError(failure.message));
         },
-        (data) {
-          emit(SearchHasData(data));
+        (result) {
+          emit(SearchTVHasData(result));
         },
       );
-    }, transformer: debounce(const Duration(milliseconds: 500)));
+    }, transformer: _debounce(const Duration(milliseconds: 500)));
   }
-}
 
-EventTransformer<T> debounce<T>(Duration duration) {
-  return (events, mapper) => events.debounceTime(duration).flatMap(mapper);
+  EventTransformer<OnChangeTvQuery> _debounce<OnChangeTvQuery>(
+          Duration duration) =>
+      (events, mapper) => events.debounceTime(duration).flatMap(mapper);
 }

@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:dartz/dartz.dart';
 import 'package:aplikasiditonton/common/failure.dart';
 import 'package:aplikasiditonton/common/state_enum.dart';
