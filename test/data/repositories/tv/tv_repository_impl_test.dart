@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
 import 'dart:io';
 
 import 'package:aplikasiditonton/data/models/tv/tv_detail_model.dart';

@@ -40,7 +40,7 @@ void main() {
 
         return cubit;
       },
-      act: (cubit) => cubit.fetchDetailTv(testTV.id!),
+      act: (cubit) => cubit.fetchDetailTv(testTV.id),
       verify: (cubit) => mockGetTVDetail.execute(testTV.id),
     );
     blocTest<TVDetailCubit, TVDetailState>(
@@ -53,7 +53,7 @@ void main() {
 
         return cubit;
       },
-      act: (cubit) => cubit.fetchDetailTv(testTV.id!),
+      act: (cubit) => cubit.fetchDetailTv(testTV.id),
       expect: () => [
         TVDetailLoading(),
         TVRecommendationLoading(),
@@ -77,7 +77,7 @@ void main() {
 
         return cubit;
       },
-      act: (cubit) => cubit.fetchDetailTv(testTV.id!),
+      act: (cubit) => cubit.fetchDetailTv(testTV.id),
       expect: () => [
         TVDetailLoading(),
         const TVDetailError('Server Failure'),
@@ -97,7 +97,7 @@ void main() {
 
         return cubit;
       },
-      act: (cubit) => cubit.fetchDetailTv(testTV.id!),
+      act: (cubit) => cubit.fetchDetailTv(testTV.id),
       expect: () => [
         TVDetailLoading(),
         TVRecommendationLoading(),

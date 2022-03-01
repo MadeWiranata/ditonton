@@ -1,17 +1,18 @@
-import 'package:equatable/equatable.dart';
+part of 'search_tv_bloc.dart';
 
+@immutable
 abstract class SearchTVEvent extends Equatable {
   const SearchTVEvent();
 
   @override
-  List<Object> get props => [];
+  List<Object?> get props => [];
 }
 
-class OnQueryChanged extends SearchTVEvent {
+class OnChangeTvQuery extends SearchTVEvent {
   final String query;
 
-  const OnQueryChanged(this.query);
+  const OnChangeTvQuery(this.query);
 
   @override
-  List<Object> get props => [query];
+  List<Object?> get props => [query];
 }

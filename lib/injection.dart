@@ -57,7 +57,7 @@ void init() {
   );
   locator.registerFactory(
     () => SearchBloc(
-      locator(),
+      searchMovies: locator(),
     ),
   );
 

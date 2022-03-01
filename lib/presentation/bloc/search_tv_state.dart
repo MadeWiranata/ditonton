@@ -1,31 +1,31 @@
-import 'package:aplikasiditonton/domain/entities/tv/tv.dart';
-import 'package:equatable/equatable.dart';
+part of 'search_tv_bloc.dart';
 
+@immutable
 abstract class SearchTVState extends Equatable {
   const SearchTVState();
 
   @override
-  List<Object> get props => [];
+  List<Object?> get props => [];
 }
 
-class SearchEmpty extends SearchTVState {}
+class SearchTVInitial extends SearchTVState {}
 
-class SearchLoading extends SearchTVState {}
+class SearchTVLoading extends SearchTVState {}
 
-class SearchError extends SearchTVState {
-  final String message;
-
-  const SearchError(this.message);
-
-  @override
-  List<Object> get props => [message];
-}
-
-class SearchHasData extends SearchTVState {
+class SearchTVHasData extends SearchTVState {
   final List<Tv> result;
 
-  const SearchHasData(this.result);
+  const SearchTVHasData(this.result);
 
   @override
-  List<Object> get props => [result];
+  List<Object?> get props => [result];
+}
+
+class SearchTVError extends SearchTVState {
+  final String message;
+
+  const SearchTVError(this.message);
+
+  @override
+  List<Object?> get props => [message];
 }

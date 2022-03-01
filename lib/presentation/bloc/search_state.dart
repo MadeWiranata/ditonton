@@ -1,31 +1,31 @@
-import 'package:aplikasiditonton/domain/entities/movie.dart';
-import 'package:equatable/equatable.dart';
+part of 'search_bloc.dart';
 
+@immutable
 abstract class SearchState extends Equatable {
   const SearchState();
 
   @override
-  List<Object> get props => [];
+  List<Object?> get props => [];
 }
 
-class SearchEmpty extends SearchState {}
+class SearchMoviesInitial extends SearchState {}
 
-class SearchLoading extends SearchState {}
+class SearchMoviesLoading extends SearchState {}
 
-class SearchError extends SearchState {
-  final String message;
-
-  const SearchError(this.message);
-
-  @override
-  List<Object> get props => [message];
-}
-
-class SearchHasData extends SearchState {
+class SearchMoviesHasData extends SearchState {
   final List<Movie> result;
 
-  const SearchHasData(this.result);
+  const SearchMoviesHasData(this.result);
 
   @override
-  List<Object> get props => [result];
+  List<Object?> get props => [result];
+}
+
+class SearchMoviesError extends SearchState {
+  final String message;
+
+  const SearchMoviesError(this.message);
+
+  @override
+  List<Object?> get props => [message];
 }

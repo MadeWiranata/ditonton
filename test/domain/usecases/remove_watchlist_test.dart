@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:dartz/dartz.dart';
 import 'package:aplikasiditonton/domain/usecases/remove_watchlist.dart';
 import 'package:flutter_test/flutter_test.dart';

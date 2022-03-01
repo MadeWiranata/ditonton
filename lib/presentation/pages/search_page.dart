@@ -1,11 +1,8 @@
 import 'package:aplikasiditonton/common/constants.dart';
-import 'package:aplikasiditonton/presentation/bloc/search_event.dart';
 import 'package:aplikasiditonton/presentation/widgets/movie_card_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../bloc/search_bloc.dart';
-import '../bloc/search_state.dart';
 
 class SearchPage extends StatelessWidget {
   // ignore: constant_identifier_names
@@ -25,8 +22,9 @@ class SearchPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             TextField(
+              key: const Key('query_input'),
               onChanged: (query) {
-                context.read<SearchBloc>().add(OnQueryChanged(query));
+                context.read<SearchBloc>().add(OnChangeMovieQuery(query));
               },
               decoration: const InputDecoration(
                 hintText: 'Search title',
@@ -41,27 +39,29 @@ class SearchPage extends StatelessWidget {
               style: kHeading6,
             ),
             BlocBuilder<SearchBloc, SearchState>(
-              builder: (context, state) {
-                if (state is SearchLoading) {
+              builder: (context, movie) {
+                if (movie is SearchMoviesLoading) {
                   return const Center(
                     child: CircularProgressIndicator(),
                   );
-                } else if (state is SearchHasData) {
-                  final result = state.result;
+                } else if (movie is SearchMoviesHasData) {
                   return Expanded(
                     child: ListView.builder(
                       padding: const EdgeInsets.all(8),
                       itemBuilder: (context, index) {
-                        final movie = result[index];
-                        return MovieCard(movie);
+                        return MovieCard(
+                          movie.result[index],
+                        );
                       },
-                      itemCount: result.length,
+                      itemCount: movie.result.length,
                     ),
                   );
-                } else if (state is SearchError) {
-                  return Expanded(
+                } else if (movie is SearchMoviesError) {
+                  return SizedBox(
+                    height: MediaQuery.of(context).size.height / 2,
                     child: Center(
-                      child: Text(state.message),
+                      key: const Key('error_message'),
+                      child: Text(movie.message),
                     ),
                   );
                 } else {

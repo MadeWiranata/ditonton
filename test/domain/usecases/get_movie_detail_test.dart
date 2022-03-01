@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_declarations
+
 import 'package:dartz/dartz.dart';
 import 'package:aplikasiditonton/domain/usecases/get_movie_detail.dart';
 import 'package:flutter_test/flutter_test.dart';

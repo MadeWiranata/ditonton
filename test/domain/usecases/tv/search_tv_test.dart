@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_declarations
+
 import 'package:aplikasiditonton/domain/entities/tv/tv.dart';
 import 'package:aplikasiditonton/domain/usecases/tv/search_tv.dart';
 import 'package:dartz/dartz.dart';

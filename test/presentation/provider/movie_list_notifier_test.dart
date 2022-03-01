@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:dartz/dartz.dart';
 import 'package:aplikasiditonton/domain/entities/movie.dart';
 import 'package:aplikasiditonton/domain/usecases/get_now_playing_movies.dart';
@@ -37,7 +39,7 @@ void main() {
   final tMovie = Movie(
     adult: false,
     backdropPath: 'backdropPath',
-    genreIds: [1, 2, 3],
+    genreIds: const [1, 2, 3],
     id: 1,
     originalTitle: 'originalTitle',
     overview: 'overview',

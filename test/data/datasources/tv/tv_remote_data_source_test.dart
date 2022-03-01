@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_declarations, constant_identifier_names
+
 import 'dart:convert';
 import 'package:aplikasiditonton/data/datasources/tv/tv_remote_data_source.dart';
 import 'package:aplikasiditonton/data/models/tv/tv_detail_model.dart';

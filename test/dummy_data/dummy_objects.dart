@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
 import 'package:aplikasiditonton/data/models/movie_table.dart';
 import 'package:aplikasiditonton/domain/entities/genre.dart';
 import 'package:aplikasiditonton/domain/entities/movie.dart';

@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_declarations, prefer_const_literals_to_create_immutables
+
 import 'package:dartz/dartz.dart';
 import 'package:aplikasiditonton/domain/entities/movie.dart';
 import 'package:aplikasiditonton/domain/usecases/get_movie_detail.dart';
