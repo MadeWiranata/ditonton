@@ -1,3 +1,4 @@
+import 'package:about/about_page.dart';
 import 'package:aplikasiditonton/common/constants.dart';
 import 'package:aplikasiditonton/common/utils.dart';
 import 'package:aplikasiditonton/presentation/bloc/search_bloc.dart';
@@ -12,7 +13,6 @@ import 'package:aplikasiditonton/presentation/cubit/tv/tv_popular_cubit.dart';
 import 'package:aplikasiditonton/presentation/cubit/tv/tv_top_rated_cubit.dart';
 import 'package:aplikasiditonton/presentation/cubit/tv/tvwatchlist_cubit.dart';
 import 'package:aplikasiditonton/presentation/cubit/watchlist_cubit.dart';
-import 'package:aplikasiditonton/presentation/pages/about_page.dart';
 import 'package:aplikasiditonton/presentation/pages/movie_detail_page.dart';
 import 'package:aplikasiditonton/presentation/pages/home_movie_page.dart';
 import 'package:aplikasiditonton/presentation/pages/popular_movies_page.dart';

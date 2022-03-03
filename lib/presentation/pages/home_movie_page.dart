@@ -1,3 +1,4 @@
+import 'package:about/about_page.dart';
 import 'package:aplikasiditonton/presentation/cubit/movie_now_playing_cubit.dart';
 import 'package:aplikasiditonton/presentation/cubit/movie_popular_cubit.dart';
 import 'package:aplikasiditonton/presentation/cubit/movie_top_rated_cubit.dart';
@@ -5,7 +6,6 @@ import 'package:aplikasiditonton/presentation/pages/tv/home_tv_page.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:aplikasiditonton/common/constants.dart';
 import 'package:aplikasiditonton/domain/entities/movie.dart';
-import 'package:aplikasiditonton/presentation/pages/about_page.dart';
 import 'package:aplikasiditonton/presentation/pages/movie_detail_page.dart';
 import 'package:aplikasiditonton/presentation/pages/popular_movies_page.dart';
 import 'package:aplikasiditonton/presentation/pages/search_page.dart';
