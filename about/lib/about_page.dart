@@ -1,4 +1,3 @@
-import 'package:aplikasiditonton/common/constants.dart';
 import 'package:flutter/material.dart';
 
 class AboutPage extends StatelessWidget {
@@ -16,7 +15,7 @@ class AboutPage extends StatelessWidget {
             children: [
               Expanded(
                 child: Container(
-                  color: kPrussianBlue,
+                  color: const Color(0xFF003566),
                   child: Center(
                     child: Image.asset(
                       'assets/circle-g.png',
@@ -28,9 +27,9 @@ class AboutPage extends StatelessWidget {
               Expanded(
                 child: Container(
                   padding: const EdgeInsets.all(32.0),
-                  color: kMikadoYellow,
+                  color: const Color(0xFFffc300),
                   child: const Text(
-                    'aplikasiditonton merupakan sebuah aplikasi katalog film yang dikembangkan oleh Dicoding Indonesia sebagai contoh proyek aplikasi untuk kelas Menjadi Flutter Developer Expert.',
+                    'Ditonton merupakan sebuah aplikasi katalog film yang dikembangkan oleh Dicoding Indonesia sebagai contoh proyek aplikasi untuk kelas Menjadi Flutter Developer Expert.',
                     style: TextStyle(color: Colors.black87, fontSize: 16),
                     textAlign: TextAlign.justify,
                   ),
