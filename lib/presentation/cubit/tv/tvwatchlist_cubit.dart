@@ -10,9 +10,9 @@ part 'tvwatchlist_state.dart';
 
 class TVWatchlistCubit extends Cubit<TVWatchlistState> {
   final GetWatchlistTV watchlist;
-  final GetWatchListStatus getWatchListStatus;
-  final SaveWatchlist saveWatchlist;
-  final RemoveWatchlist removeWatchlist;
+  final TVGetWatchListStatus getWatchListStatus;
+  final TVSaveWatchlist saveWatchlist;
+  final TVRemoveWatchlist removeWatchlist;
 
   static const addWatchlistMessage = 'Added to Watchlist';
   static const removeWatchlistMessage = 'Removed from Watchlist';

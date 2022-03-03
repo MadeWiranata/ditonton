@@ -15,9 +15,9 @@ class TVDetailNotifier extends ChangeNotifier {
 
   final GetTVDetail getTVDetail;
   final GetTVRecommendations getTVRecommendations;
-  final GetWatchListStatus getWatchListStatus;
-  final SaveWatchlist saveWatchlist;
-  final RemoveWatchlist removeWatchlist;
+  final TVGetWatchListStatus getWatchListStatus;
+  final TVSaveWatchlist saveWatchlist;
+  final TVRemoveWatchlist removeWatchlist;
 
   TVDetailNotifier({
     required this.getTVDetail,

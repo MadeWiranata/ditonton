@@ -18,7 +18,6 @@ import 'package:aplikasiditonton/presentation/pages/home_movie_page.dart';
 import 'package:aplikasiditonton/presentation/pages/popular_movies_page.dart';
 import 'package:aplikasiditonton/presentation/pages/search_page.dart';
 import 'package:aplikasiditonton/presentation/pages/top_rated_movies_page.dart';
-import 'package:aplikasiditonton/presentation/pages/tv/about_page.dart';
 import 'package:aplikasiditonton/presentation/pages/tv/home_tv_page.dart';
 import 'package:aplikasiditonton/presentation/pages/tv/popular_tv_page.dart';
 import 'package:aplikasiditonton/presentation/pages/tv/search_page.dart';
@@ -31,14 +30,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 import 'package:aplikasiditonton/injection.dart' as di;
-import 'package:aplikasiditonton/injection_tv.dart' as tv;
 import 'package:aplikasiditonton/data/datasources/tv/tv_local_data_source.dart';
 
 void main() {
   di.init();
-  //tv.init();
   runApp(const MyApp());
-  tv.init();
 }
 
 class MyApp extends StatelessWidget {
@@ -68,22 +64,22 @@ class MyApp extends StatelessWidget {
         ),
         //penambahan
         BlocProvider(
-          create: (_) => tv.locator<TVNowPlayingCubit>(),
+          create: (_) => di.locator<TVNowPlayingCubit>(),
         ),
         BlocProvider(
-          create: (_) => tv.locator<TVDetailCubit>(),
+          create: (_) => di.locator<TVDetailCubit>(),
         ),
         BlocProvider(
-          create: (_) => tv.locator<SearchTVBloc>(),
+          create: (_) => di.locator<SearchTVBloc>(),
         ),
         BlocProvider(
-          create: (_) => tv.locator<TVTopRatedCubit>(),
+          create: (_) => di.locator<TVTopRatedCubit>(),
         ),
         BlocProvider(
-          create: (_) => tv.locator<TVPopularCubit>(),
+          create: (_) => di.locator<TVPopularCubit>(),
         ),
         BlocProvider(
-          create: (_) => tv.locator<TVWatchlistCubit>(),
+          create: (_) => di.locator<TVWatchlistCubit>(),
         ),
       ],
       child: MaterialApp(
@@ -121,9 +117,6 @@ class MyApp extends StatelessWidget {
                   builder: (_) => const WatchlistMoviesPage());
             case AboutPage.ROUTE_NAME:
               return MaterialPageRoute(builder: (_) => const AboutPage());
-            // case TVSeriesPage.ROUTE_NAME:
-            // return MaterialPageRoute(builder: (_) => TVSeriesPage());
-//penambahan
             case HomeTVPage.ROUTE_NAME:
               //tv.init();
               return MaterialPageRoute(builder: (_) => const HomeTVPage());
@@ -142,8 +135,6 @@ class MyApp extends StatelessWidget {
             case WatchlistTVPage.ROUTE_NAME:
               TVLocalDataSourceImpl.KelasApa = "";
               return MaterialPageRoute(builder: (_) => const WatchlistTVPage());
-            case AboutPageTV.ROUTE_NAME:
-              return MaterialPageRoute(builder: (_) => const AboutPageTV());
             default:
               return MaterialPageRoute(builder: (_) {
                 return const Scaffold(

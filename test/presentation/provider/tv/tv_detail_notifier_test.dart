@@ -19,9 +19,9 @@ import 'tv_detail_notifier_test.mocks.dart';
 @GenerateMocks([
   GetTVDetail,
   GetTVRecommendations,
-  GetWatchListStatus,
-  SaveWatchlist,
-  RemoveWatchlist,
+  TVGetWatchListStatus,
+  TVSaveWatchlist,
+  TVRemoveWatchlist,
 ])
 void main() {
   late TVDetailNotifier provider;
