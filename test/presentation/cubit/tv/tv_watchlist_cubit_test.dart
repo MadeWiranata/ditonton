@@ -16,9 +16,9 @@ import 'tv_watchlist_cubit_test.mocks.dart';
 
 @GenerateMocks([
   GetWatchlistTV,
-  GetWatchListStatus,
-  SaveWatchlist,
-  RemoveWatchlist,
+  TVGetWatchListStatus,
+  TVSaveWatchlist,
+  TVRemoveWatchlist,
 ])
 void main() {
   late TVWatchlistCubit cubit;

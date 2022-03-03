@@ -3,7 +3,7 @@ import 'package:aplikasiditonton/presentation/cubit/tv/tv_now_playing_cubit.dart
 import 'package:aplikasiditonton/presentation/cubit/tv/tv_popular_cubit.dart';
 import 'package:aplikasiditonton/presentation/cubit/tv/tv_top_rated_cubit.dart';
 import 'package:aplikasiditonton/presentation/pages/home_movie_page.dart';
-import 'package:aplikasiditonton/presentation/pages/tv/about_page.dart';
+import 'package:aplikasiditonton/presentation/pages/about_page.dart';
 import 'package:aplikasiditonton/presentation/pages/tv/popular_tv_page.dart';
 import 'package:aplikasiditonton/presentation/pages/tv/search_page.dart';
 import 'package:aplikasiditonton/presentation/pages/tv/top_rated_tv_page.dart';
@@ -71,7 +71,7 @@ class _HomeTVPageState extends State<HomeTVPage> {
             ),
             ListTile(
               onTap: () {
-                Navigator.pushNamed(context, AboutPageTV.ROUTE_NAME);
+                Navigator.pushNamed(context, AboutPage.ROUTE_NAME);
               },
               leading: const Icon(Icons.info_outline),
               title: const Text('About'),

@@ -5,12 +5,12 @@ import 'package:mockito/mockito.dart';
 import '../../../helpers/tv/test_helper.mocks.dart';
 
 void main() {
-  late GetWatchListStatus usecase;
+  late TVGetWatchListStatus usecase;
   late MockTVRepository mockTVRepository;
 
   setUp(() {
     mockTVRepository = MockTVRepository();
-    usecase = GetWatchListStatus(mockTVRepository);
+    usecase = TVGetWatchListStatus(mockTVRepository);
   });
 
   test('should get watchlist status from repository', () async {

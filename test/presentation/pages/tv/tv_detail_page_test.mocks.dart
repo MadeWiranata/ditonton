@@ -46,11 +46,12 @@ class _FakeStreamSubscription_3<T> extends _i1.Fake
 class _FakeGetWatchlist_4 extends _i1.Fake implements _i6.GetWatchlistTV {}
 
 class _FakeGetWatchListStatus_5 extends _i1.Fake
-    implements _i7.GetWatchListStatus {}
+    implements _i7.TVGetWatchListStatus {}
 
-class _FakeSaveWatchlist_6 extends _i1.Fake implements _i8.SaveWatchlist {}
+class _FakeSaveWatchlist_6 extends _i1.Fake implements _i8.TVSaveWatchlist {}
 
-class _FakeRemoveWatchlist_7 extends _i1.Fake implements _i9.RemoveWatchlist {}
+class _FakeRemoveWatchlist_7 extends _i1.Fake implements _i9.TVRemoveWatchlist {
+}
 
 class _FakeWatchlistState_8 extends _i1.Fake implements _i10.TVWatchlistState {}
 
@@ -139,17 +140,17 @@ class MockWatchlistCubit extends _i1.Mock implements _i10.TVWatchlistCubit {
       (super.noSuchMethod(Invocation.getter(#watchlist),
           returnValue: _FakeGetWatchlist_4()) as _i6.GetWatchlistTV);
   @override
-  _i7.GetWatchListStatus get getWatchListStatus =>
-      (super.noSuchMethod(Invocation.getter(#getWatchListStatus),
-          returnValue: _FakeGetWatchListStatus_5()) as _i7.GetWatchListStatus);
+  _i7.TVGetWatchListStatus get getWatchListStatus => (super.noSuchMethod(
+      Invocation.getter(#getWatchListStatus),
+      returnValue: _FakeGetWatchListStatus_5()) as _i7.TVGetWatchListStatus);
   @override
-  _i8.SaveWatchlist get saveWatchlist =>
+  _i8.TVSaveWatchlist get saveWatchlist =>
       (super.noSuchMethod(Invocation.getter(#saveWatchlist),
-          returnValue: _FakeSaveWatchlist_6()) as _i8.SaveWatchlist);
+          returnValue: _FakeSaveWatchlist_6()) as _i8.TVSaveWatchlist);
   @override
-  _i9.RemoveWatchlist get removeWatchlist =>
+  _i9.TVRemoveWatchlist get removeWatchlist =>
       (super.noSuchMethod(Invocation.getter(#removeWatchlist),
-          returnValue: _FakeRemoveWatchlist_7()) as _i9.RemoveWatchlist);
+          returnValue: _FakeRemoveWatchlist_7()) as _i9.TVRemoveWatchlist);
   @override
   _i10.TVWatchlistState get state =>
       (super.noSuchMethod(Invocation.getter(#state),

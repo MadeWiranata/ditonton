@@ -55,7 +55,7 @@ class MockGetTVWatchlist extends _i1.Mock implements _i4.GetWatchlistTV {
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockGetWatchListStatus extends _i1.Mock
-    implements _i7.GetWatchListStatus {
+    implements _i7.TVGetWatchListStatus {
   MockGetWatchListStatus() {
     _i1.throwOnMissingStub(this);
   }
@@ -75,7 +75,7 @@ class MockGetWatchListStatus extends _i1.Mock
 /// A class which mocks [SaveWatchlist].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockSaveWatchlist extends _i1.Mock implements _i8.SaveWatchlist {
+class MockSaveWatchlist extends _i1.Mock implements _i8.TVSaveWatchlist {
   MockSaveWatchlist() {
     _i1.throwOnMissingStub(this);
   }
@@ -97,7 +97,7 @@ class MockSaveWatchlist extends _i1.Mock implements _i8.SaveWatchlist {
 /// A class which mocks [RemoveWatchlist].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockRemoveWatchlist extends _i1.Mock implements _i10.RemoveWatchlist {
+class MockRemoveWatchlist extends _i1.Mock implements _i10.TVRemoveWatchlist {
   MockRemoveWatchlist() {
     _i1.throwOnMissingStub(this);
   }

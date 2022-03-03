@@ -9,12 +9,12 @@ import '../../../dummy_data/tv/dummy_objects.dart';
 import '../../../helpers/tv/test_helper.mocks.dart';
 
 void main() {
-  late SaveWatchlist usecase;
+  late TVSaveWatchlist usecase;
   late MockTVRepository mockTVRepository;
 
   setUp(() {
     mockTVRepository = MockTVRepository();
-    usecase = SaveWatchlist(mockTVRepository);
+    usecase = TVSaveWatchlist(mockTVRepository);
   });
 
   test('should save tv to the repository', () async {
