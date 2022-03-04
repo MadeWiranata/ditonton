@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:core/utils/state_enum.dart';
 import 'package:dartz/dartz.dart';
-import 'package:aplikasiditonton/common/failure.dart';
-import 'package:aplikasiditonton/common/state_enum.dart';
+import 'package:core/utils/failure.dart';
 import 'package:aplikasiditonton/domain/usecases/tv/get_watchlist_tv.dart';
 import 'package:aplikasiditonton/presentation/provider/tv/watchlist_tv_notifier.dart';
 import 'package:flutter_test/flutter_test.dart';

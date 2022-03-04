@@ -1,4 +1,4 @@
-import 'package:aplikasiditonton/common/failure.dart';
+import 'package:core/utils/failure.dart';
 import 'package:aplikasiditonton/domain/usecases/tv/get_tv_recommendations.dart';
 import 'package:aplikasiditonton/presentation/cubit/tv/tv_detail_cubit.dart';
 import 'package:bloc_test/bloc_test.dart';

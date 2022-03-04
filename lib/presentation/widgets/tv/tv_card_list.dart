@@ -1,7 +1,7 @@
 import 'package:aplikasiditonton/domain/entities/tv/tv.dart';
-import 'package:aplikasiditonton/presentation/pages/tv/tv_detail_page.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:aplikasiditonton/common/constants.dart';
+import 'package:core/core.dart';
+import 'package:core/utils/routes.dart';
 import 'package:flutter/material.dart';
 
 class TVCard extends StatelessWidget {
@@ -18,7 +18,7 @@ class TVCard extends StatelessWidget {
         onTap: () {
           Navigator.pushNamed(
             context,
-            TVDetailPage.ROUTE_NAME,
+            TV_DETAIL_ROUTE,
             arguments: tv.id,
           );
         },
@@ -58,7 +58,7 @@ class TVCard extends StatelessWidget {
               ),
               child: ClipRRect(
                 child: CachedNetworkImage(
-                  imageUrl: '$BASE_IMAGE_URL${tv.poster_path}',
+                  imageUrl: '$baseImageUrl${tv.poster_path}',
                   width: 80,
                   placeholder: (context, url) => const Center(
                     child: CircularProgressIndicator(),

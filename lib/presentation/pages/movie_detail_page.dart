@@ -1,17 +1,16 @@
 import 'package:aplikasiditonton/presentation/cubit/movie_detail_cubit.dart';
 import 'package:aplikasiditonton/presentation/cubit/watchlist_cubit.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:aplikasiditonton/common/constants.dart';
 import 'package:aplikasiditonton/domain/entities/genre.dart';
 import 'package:aplikasiditonton/domain/entities/movie_detail.dart';
+import 'package:core/styles/colors.dart';
+import 'package:core/styles/text_style.dart';
+import 'package:core/utils/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class MovieDetailPage extends StatefulWidget {
-  // ignore: constant_identifier_names
-  static const ROUTE_NAME = '/detail';
-
   final int id;
   const MovieDetailPage({Key? key, required this.id}) : super(key: key);
 
@@ -234,7 +233,7 @@ class DetailContent extends StatelessWidget {
                                             onTap: () {
                                               Navigator.pushReplacementNamed(
                                                 context,
-                                                MovieDetailPage.ROUTE_NAME,
+                                                MOVIE_DETAIL_ROUTE,
                                                 arguments: movie.id,
                                               );
                                             },

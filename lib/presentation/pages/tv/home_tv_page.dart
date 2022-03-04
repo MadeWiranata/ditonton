@@ -1,22 +1,17 @@
-import 'package:about/about_page.dart';
 import 'package:aplikasiditonton/domain/entities/tv/tv.dart';
 import 'package:aplikasiditonton/presentation/cubit/tv/tv_now_playing_cubit.dart';
 import 'package:aplikasiditonton/presentation/cubit/tv/tv_popular_cubit.dart';
 import 'package:aplikasiditonton/presentation/cubit/tv/tv_top_rated_cubit.dart';
-import 'package:aplikasiditonton/presentation/pages/home_movie_page.dart';
-import 'package:aplikasiditonton/presentation/pages/tv/popular_tv_page.dart';
 import 'package:aplikasiditonton/presentation/pages/tv/search_page.dart';
-import 'package:aplikasiditonton/presentation/pages/tv/top_rated_tv_page.dart';
-import 'package:aplikasiditonton/presentation/pages/tv/tv_detail_page.dart';
 import 'package:aplikasiditonton/presentation/pages/tv/watchlist_tv_page.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:aplikasiditonton/common/constants.dart';
+import 'package:core/styles/text_style.dart';
+import 'package:core/utils/constants.dart';
+import 'package:core/utils/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeTVPage extends StatefulWidget {
-  // ignore: constant_identifier_names
-  static const ROUTE_NAME = '/home-tv';
   const HomeTVPage({Key? key}) : super(key: key);
 
   @override
@@ -52,7 +47,7 @@ class _HomeTVPageState extends State<HomeTVPage> {
               title: const Text('Movies'),
               onTap: () {
                 Navigator.popUntil(context, (route) => false);
-                Navigator.pushNamed(context, HomeMoviePage.ROUTE_NAME);
+                Navigator.pushNamed(context, HOME_MOVIE);
               },
             ),
             ListTile(
@@ -71,7 +66,7 @@ class _HomeTVPageState extends State<HomeTVPage> {
             ),
             ListTile(
               onTap: () {
-                Navigator.pushNamed(context, AboutPage.ROUTE_NAME);
+                Navigator.pushNamed(context, SEARCH_ROUTE);
               },
               leading: const Icon(Icons.info_outline),
               title: const Text('About'),
@@ -117,8 +112,7 @@ class _HomeTVPageState extends State<HomeTVPage> {
               }),
               _buildSubHeading(
                 title: 'Popular',
-                onTap: () =>
-                    Navigator.pushNamed(context, PopularTVPage.ROUTE_NAME),
+                onTap: () => Navigator.pushNamed(context, POPULAR_TV_ROUTE),
               ),
               BlocBuilder<TVPopularCubit, TVPopularState>(
                   builder: (context, popular) {
@@ -137,8 +131,7 @@ class _HomeTVPageState extends State<HomeTVPage> {
               }),
               _buildSubHeading(
                 title: 'Top Rated',
-                onTap: () =>
-                    Navigator.pushNamed(context, TopRatedTVPage.ROUTE_NAME),
+                onTap: () => Navigator.pushNamed(context, TV_TOP_RATED_ROUTE),
               ),
               BlocBuilder<TVTopRatedCubit, TVTopRatedState>(
                   builder: (context, top) {
@@ -204,14 +197,14 @@ class TVList extends StatelessWidget {
               onTap: () {
                 Navigator.pushNamed(
                   context,
-                  TVDetailPage.ROUTE_NAME,
+                  TV_DETAIL_ROUTE,
                   arguments: tv.id,
                 );
               },
               child: ClipRRect(
                 borderRadius: const BorderRadius.all(Radius.circular(16)),
                 child: CachedNetworkImage(
-                  imageUrl: '$BASE_IMAGE_URL${tv.poster_path}',
+                  imageUrl: '$baseImageUrl${tv.poster_path}',
                   placeholder: (context, url) => const Center(
                     child: CircularProgressIndicator(),
                   ),

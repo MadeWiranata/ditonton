@@ -1,8 +1,8 @@
-import 'package:aplikasiditonton/common/state_enum.dart';
 import 'package:aplikasiditonton/domain/entities/tv/tv.dart';
 import 'package:aplikasiditonton/domain/usecases/tv/get_now_playing_tv.dart';
 import 'package:aplikasiditonton/domain/usecases/tv/get_popular_tv.dart';
 import 'package:aplikasiditonton/domain/usecases/tv/get_top_rated_tv.dart';
+import 'package:core/utils/state_enum.dart';
 import 'package:flutter/material.dart';
 
 class TVListNotifier extends ChangeNotifier {

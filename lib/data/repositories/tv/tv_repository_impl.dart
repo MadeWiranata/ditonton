@@ -1,16 +1,15 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'dart:io';
-
 import 'package:aplikasiditonton/data/datasources/tv/tv_local_data_source.dart';
 import 'package:aplikasiditonton/data/datasources/tv/tv_remote_data_source.dart';
 import 'package:aplikasiditonton/data/models/tv/tv_table.dart';
 import 'package:aplikasiditonton/domain/entities/tv/tv.dart';
 import 'package:aplikasiditonton/domain/entities/tv/tv_detail.dart';
 import 'package:aplikasiditonton/domain/repositories/tv/tv_repository.dart';
+import 'package:core/utils/exception.dart';
+import 'package:core/utils/failure.dart';
 import 'package:dartz/dartz.dart';
-import 'package:aplikasiditonton/common/exception.dart';
-import 'package:aplikasiditonton/common/failure.dart';
 
 class TVRepositoryImpl implements TVRepository {
   final TVRemoteDataSource remoteDataSource;

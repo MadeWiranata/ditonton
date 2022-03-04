@@ -2,10 +2,10 @@ import 'package:aplikasiditonton/domain/entities/movie.dart';
 import 'package:aplikasiditonton/domain/entities/movie_detail.dart';
 import 'package:aplikasiditonton/domain/usecases/get_movie_detail.dart';
 import 'package:aplikasiditonton/domain/usecases/get_movie_recommendations.dart';
-import 'package:aplikasiditonton/common/state_enum.dart';
 import 'package:aplikasiditonton/domain/usecases/get_watchlist_status.dart';
 import 'package:aplikasiditonton/domain/usecases/remove_watchlist.dart';
 import 'package:aplikasiditonton/domain/usecases/save_watchlist.dart';
+import 'package:core/utils/state_enum.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 

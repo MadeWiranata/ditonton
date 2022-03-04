@@ -1,13 +1,13 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:core/utils/state_enum.dart';
 import 'package:dartz/dartz.dart';
 import 'package:aplikasiditonton/domain/entities/movie.dart';
 import 'package:aplikasiditonton/domain/usecases/get_now_playing_movies.dart';
-import 'package:aplikasiditonton/common/failure.dart';
+import 'package:core/utils/failure.dart';
 import 'package:aplikasiditonton/domain/usecases/get_popular_movies.dart';
 import 'package:aplikasiditonton/domain/usecases/get_top_rated_movies.dart';
 import 'package:aplikasiditonton/presentation/provider/movie_list_notifier.dart';
-import 'package:aplikasiditonton/common/state_enum.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';

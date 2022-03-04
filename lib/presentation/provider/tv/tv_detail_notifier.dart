@@ -1,4 +1,3 @@
-import 'package:aplikasiditonton/common/state_enum.dart';
 import 'package:aplikasiditonton/domain/entities/tv/tv.dart';
 import 'package:aplikasiditonton/domain/entities/tv/tv_detail.dart';
 import 'package:aplikasiditonton/domain/usecases/tv/get_tv_detail.dart';
@@ -6,6 +5,7 @@ import 'package:aplikasiditonton/domain/usecases/tv/get_tv_recommendations.dart'
 import 'package:aplikasiditonton/domain/usecases/tv/get_watchlist_status.dart';
 import 'package:aplikasiditonton/domain/usecases/tv/remove_watchlist.dart';
 import 'package:aplikasiditonton/domain/usecases/tv/save_watchlist.dart';
+import 'package:core/utils/state_enum.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 

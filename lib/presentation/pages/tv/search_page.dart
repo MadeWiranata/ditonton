@@ -1,6 +1,6 @@
-import 'package:aplikasiditonton/common/constants.dart';
 import 'package:aplikasiditonton/presentation/bloc/search_tv_bloc.dart';
 import 'package:aplikasiditonton/presentation/widgets/tv/tv_card_list.dart';
+import 'package:core/styles/text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

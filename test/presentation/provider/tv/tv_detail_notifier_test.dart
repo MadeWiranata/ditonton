@@ -1,15 +1,15 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_declarations, prefer_const_literals_to_create_immutables
 
+import 'package:core/utils/state_enum.dart';
 import 'package:dartz/dartz.dart';
 import 'package:aplikasiditonton/domain/entities/tv/tv.dart';
 import 'package:aplikasiditonton/domain/usecases/tv/get_tv_detail.dart';
 import 'package:aplikasiditonton/domain/usecases/tv/get_tv_recommendations.dart';
-import 'package:aplikasiditonton/common/failure.dart';
+import 'package:core/utils/failure.dart';
 import 'package:aplikasiditonton/domain/usecases/tv/get_watchlist_status.dart';
 import 'package:aplikasiditonton/domain/usecases/tv/remove_watchlist.dart';
 import 'package:aplikasiditonton/domain/usecases/tv/save_watchlist.dart';
 import 'package:aplikasiditonton/presentation/provider/tv/tv_detail_notifier.dart';
-import 'package:aplikasiditonton/common/state_enum.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';

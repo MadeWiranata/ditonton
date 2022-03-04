@@ -11,7 +11,7 @@ import 'package:aplikasiditonton/domain/usecases/get_watchlist_status.dart'
     as _i7;
 import 'package:aplikasiditonton/domain/usecases/remove_watchlist.dart' as _i10;
 import 'package:aplikasiditonton/domain/usecases/save_watchlist.dart' as _i8;
-import 'package:aplikasiditonton/common/failure.dart' as _i6;
+import 'package:core/utils/failure.dart' as _i6;
 import 'package:dartz/dartz.dart' as _i2;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:aplikasiditonton/domain/entities/movie_detail.dart' as _i9;

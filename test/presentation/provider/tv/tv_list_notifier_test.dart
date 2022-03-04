@@ -1,13 +1,13 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
+import 'package:core/utils/state_enum.dart';
 import 'package:dartz/dartz.dart';
 import 'package:aplikasiditonton/domain/entities/tv/tv.dart';
 import 'package:aplikasiditonton/domain/usecases/tv/get_now_playing_tv.dart';
-import 'package:aplikasiditonton/common/failure.dart';
+import 'package:core/utils/failure.dart';
 import 'package:aplikasiditonton/domain/usecases/tv/get_popular_tv.dart';
 import 'package:aplikasiditonton/domain/usecases/tv/get_top_rated_tv.dart';
 import 'package:aplikasiditonton/presentation/provider/tv/tv_list_notifier.dart';
-import 'package:aplikasiditonton/common/state_enum.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';

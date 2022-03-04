@@ -3,15 +3,14 @@ import 'package:aplikasiditonton/domain/entities/tv/tv_detail.dart';
 import 'package:aplikasiditonton/presentation/cubit/tv/tv_detail_cubit.dart';
 import 'package:aplikasiditonton/presentation/cubit/tv/tvwatchlist_cubit.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:aplikasiditonton/common/constants.dart';
+import 'package:core/styles/colors.dart';
+import 'package:core/styles/text_style.dart';
+import 'package:core/utils/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class TVDetailPage extends StatefulWidget {
-  // ignore: constant_identifier_names
-  static const ROUTE_NAME = '/detail-tv';
-
   final int id;
   const TVDetailPage({Key? key, required this.id}) : super(key: key);
 
@@ -236,7 +235,7 @@ class DetailContent extends StatelessWidget {
                                             onTap: () {
                                               Navigator.pushReplacementNamed(
                                                 context,
-                                                TVDetailPage.ROUTE_NAME,
+                                                TV_DETAIL_ROUTE,
                                                 arguments: tv.id,
                                               );
                                             },

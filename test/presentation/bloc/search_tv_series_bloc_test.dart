@@ -1,8 +1,8 @@
-import 'package:aplikasiditonton/common/failure.dart';
 import 'package:aplikasiditonton/domain/entities/tv/tv.dart';
 import 'package:aplikasiditonton/domain/usecases/tv/search_tv.dart';
 import 'package:aplikasiditonton/presentation/bloc/search_tv_bloc.dart';
 import 'package:bloc_test/bloc_test.dart';
+import 'package:core/utils/failure.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
