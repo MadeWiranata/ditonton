@@ -6,7 +6,7 @@ import 'dart:async' as _i7;
 import 'dart:convert' as _i24;
 import 'dart:typed_data' as _i25;
 
-import 'package:aplikasiditonton/common/failure.dart' as _i8;
+import 'package:core/utils/failure.dart' as _i8;
 import 'package:aplikasiditonton/data/datasources/db/tv/database_helper.dart'
     as _i15;
 import 'package:aplikasiditonton/data/datasources/movie_local_data_source.dart'

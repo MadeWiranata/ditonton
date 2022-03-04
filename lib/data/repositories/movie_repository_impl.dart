@@ -1,7 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'dart:io';
-
+import 'package:core/utils/exception.dart';
+import 'package:core/utils/failure.dart';
 import 'package:dartz/dartz.dart';
 import 'package:aplikasiditonton/data/datasources/movie_local_data_source.dart';
 import 'package:aplikasiditonton/data/datasources/movie_remote_data_source.dart';
@@ -9,8 +10,6 @@ import 'package:aplikasiditonton/data/models/movie_table.dart';
 import 'package:aplikasiditonton/domain/entities/movie.dart';
 import 'package:aplikasiditonton/domain/entities/movie_detail.dart';
 import 'package:aplikasiditonton/domain/repositories/movie_repository.dart';
-import 'package:aplikasiditonton/common/exception.dart';
-import 'package:aplikasiditonton/common/failure.dart';
 
 class MovieRepositoryImpl implements MovieRepository {
   final MovieRemoteDataSource remoteDataSource;

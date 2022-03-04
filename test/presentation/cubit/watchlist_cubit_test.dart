@@ -1,4 +1,4 @@
-import 'package:aplikasiditonton/common/failure.dart';
+import 'package:core/utils/failure.dart';
 import 'package:bloc_test/bloc_test.dart';
 import 'package:aplikasiditonton/domain/entities/genre.dart';
 import 'package:aplikasiditonton/domain/usecases/get_watchlist_movies.dart';

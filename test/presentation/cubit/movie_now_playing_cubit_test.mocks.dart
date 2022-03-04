@@ -3,7 +3,7 @@
 // Do not manually edit this file.
 
 import 'dart:async' as _i5;
-import 'package:aplikasiditonton/common/failure.dart' as _i6;
+import 'package:core/utils/failure.dart' as _i6;
 import 'package:dartz/dartz.dart' as _i3;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:aplikasiditonton/domain/entities/movie.dart' as _i7;

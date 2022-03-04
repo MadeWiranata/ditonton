@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_declarations, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:core/utils/state_enum.dart';
 import 'package:dartz/dartz.dart';
-import 'package:aplikasiditonton/common/failure.dart';
-import 'package:aplikasiditonton/common/state_enum.dart';
+import 'package:core/utils/failure.dart';
 import 'package:aplikasiditonton/domain/entities/movie.dart';
 import 'package:aplikasiditonton/domain/usecases/search_movies.dart';
 import 'package:aplikasiditonton/presentation/provider/movie_search_notifier.dart';

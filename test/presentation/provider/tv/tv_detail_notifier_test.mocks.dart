@@ -4,7 +4,7 @@
 
 import 'dart:async' as _i6;
 
-import 'package:aplikasiditonton/common/failure.dart' as _i7;
+import 'package:core/utils/failure.dart' as _i7;
 import 'package:aplikasiditonton/domain/entities/tv/tv_detail.dart' as _i13;
 import 'package:aplikasiditonton/domain/entities/tv/tv.dart' as _i10;
 import 'package:aplikasiditonton/domain/entities/tv/tv_detail.dart' as _i8;

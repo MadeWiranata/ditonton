@@ -12,7 +12,7 @@ import 'package:aplikasiditonton/domain/usecases/tv/get_watchlist_status.dart'
 import 'package:aplikasiditonton/domain/usecases/tv/remove_watchlist.dart'
     as _i10;
 import 'package:aplikasiditonton/domain/usecases/tv/save_watchlist.dart' as _i8;
-import 'package:aplikasiditonton/common/failure.dart' as _i6;
+import 'package:core/utils/failure.dart' as _i6;
 import 'package:dartz/dartz.dart' as _i2;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:aplikasiditonton/domain/entities/tv/tv_detail.dart' as _i9;

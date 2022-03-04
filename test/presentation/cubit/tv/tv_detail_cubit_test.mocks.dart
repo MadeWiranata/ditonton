@@ -5,7 +5,7 @@
 // ignore_for_file: unnecessary_overrides
 
 import 'dart:async' as _i5;
-import 'package:aplikasiditonton/common/failure.dart' as _i6;
+import 'package:core/utils/failure.dart' as _i6;
 import 'package:dartz/dartz.dart' as _i3;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:aplikasiditonton/domain/entities/tv/tv.dart' as _i9;
