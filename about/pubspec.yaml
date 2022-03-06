@@ -1,6 +1,7 @@
 name: about
 description: A new Flutter package project.
 version: 0.0.1
+publish_to: none
 homepage:
 
 environment:
@@ -8,6 +9,8 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
+  core:
+    path: ../core
   flutter:
     sdk: flutter
 
