@@ -33,6 +33,12 @@ dependencies:
     sdk: flutter
   core:
     path: core
+  search:
+    path: search
+  movies:
+    path: movies
+  tv:
+    path: tv
 
 
   # The following adds the Cupertino Icons font to your application.

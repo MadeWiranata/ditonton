@@ -1,38 +1,38 @@
 import 'package:about/about_page.dart';
-import 'package:aplikasiditonton/common/utils.dart';
-import 'package:aplikasiditonton/presentation/bloc/search_bloc.dart';
-import 'package:aplikasiditonton/presentation/bloc/search_tv_bloc.dart';
-import 'package:aplikasiditonton/presentation/cubit/movie_detail_cubit.dart';
-import 'package:aplikasiditonton/presentation/cubit/movie_now_playing_cubit.dart';
-import 'package:aplikasiditonton/presentation/cubit/movie_popular_cubit.dart';
-import 'package:aplikasiditonton/presentation/cubit/movie_top_rated_cubit.dart';
-import 'package:aplikasiditonton/presentation/cubit/tv/tv_detail_cubit.dart';
-import 'package:aplikasiditonton/presentation/cubit/tv/tv_now_playing_cubit.dart';
-import 'package:aplikasiditonton/presentation/cubit/tv/tv_popular_cubit.dart';
-import 'package:aplikasiditonton/presentation/cubit/tv/tv_top_rated_cubit.dart';
-import 'package:aplikasiditonton/presentation/cubit/tv/tvwatchlist_cubit.dart';
-import 'package:aplikasiditonton/presentation/cubit/watchlist_cubit.dart';
-import 'package:aplikasiditonton/presentation/pages/movie_detail_page.dart';
-import 'package:aplikasiditonton/presentation/pages/home_movie_page.dart';
-import 'package:aplikasiditonton/presentation/pages/popular_movies_page.dart';
-import 'package:aplikasiditonton/presentation/pages/search_page.dart';
-import 'package:aplikasiditonton/presentation/pages/top_rated_movies_page.dart';
-import 'package:aplikasiditonton/presentation/pages/tv/home_tv_page.dart';
-import 'package:aplikasiditonton/presentation/pages/tv/popular_tv_page.dart';
-import 'package:aplikasiditonton/presentation/pages/tv/search_page.dart';
-import 'package:aplikasiditonton/presentation/pages/tv/top_rated_tv_page.dart';
-import 'package:aplikasiditonton/presentation/pages/tv/tv_detail_page.dart';
-import 'package:aplikasiditonton/presentation/pages/tv/watchlist_tv_page.dart';
-import 'package:aplikasiditonton/presentation/pages/watchlist_movies_page.dart';
+import 'package:core/presentation/cubit/movies/watchlist_cubit.dart';
+import 'package:core/presentation/cubit/tv/tvwatchlist_cubit.dart';
+import 'package:core/presentation/pages/tv/watchlist_tv_page.dart';
+import 'package:core/presentation/pages/movies/watchlist_movies_page.dart';
 import 'package:core/styles/colors.dart';
 import 'package:core/styles/text_style.dart';
 import 'package:core/utils/routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:movies/presentation/cubit/movie_detail_cubit.dart';
+import 'package:movies/presentation/cubit/movie_now_playing_cubit.dart';
+import 'package:movies/presentation/cubit/movie_popular_cubit.dart';
+import 'package:movies/presentation/cubit/movie_top_rated_cubit.dart';
 import 'package:provider/provider.dart';
 import 'package:aplikasiditonton/injection.dart' as di;
-import 'package:aplikasiditonton/data/datasources/tv/tv_local_data_source.dart';
+import 'package:search/presentation/bloc/search_bloc.dart';
+import 'package:search/presentation/bloc/search_tv_bloc.dart';
+import 'package:search/presentation/pages/movies/search_page.dart';
+import 'package:search/presentation/pages/tv/search_page.dart';
+import 'package:tv/data/datasources/tv_local_data_source.dart';
+import 'package:tv/presentation/cubit/tv_detail_cubit.dart';
+import 'package:tv/presentation/cubit/tv_now_playing_cubit.dart';
+import 'package:tv/presentation/cubit/tv_popular_cubit.dart';
+import 'package:tv/presentation/cubit/tv_top_rated_cubit.dart';
+import 'package:tv/presentation/pages/home_tv_page.dart';
+import 'package:tv/presentation/pages/popular_tv_page.dart';
+import 'package:tv/presentation/pages/top_rated_tv_page.dart';
+import 'package:tv/presentation/pages/tv_detail_page.dart';
+import 'package:movies/presentation/pages/home_movie_page.dart';
+import 'package:movies/presentation/pages/movie_detail_page.dart';
+import 'package:movies/presentation/pages/popular_movies_page.dart';
+import 'package:movies/presentation/pages/top_rated_movies_page.dart';
+import 'package:core/utils/utils.dart';
 
 void main() {
   di.init();
@@ -64,7 +64,6 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (_) => di.locator<SearchBloc>(),
         ),
-        //penambahan
         BlocProvider(
           create: (_) => di.locator<TVNowPlayingCubit>(),
         ),
