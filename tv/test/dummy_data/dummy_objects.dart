@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
-import 'package:core/domain/entities/tv/genre.dart';
+import 'package:core/domain/entities/genre.dart';
 import 'package:tv/data/models/tv_table.dart';
 import 'package:tv/domain/entities/tv.dart';
 import 'package:tv/domain/entities/tv_detail.dart';

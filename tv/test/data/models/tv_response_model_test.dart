@@ -4,7 +4,6 @@ import 'dart:convert';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:tv/data/models/tv_model.dart';
 import 'package:tv/data/models/tv_response.dart';
-
 import '../../../../core/test/json_reader.dart';
 
 void main() {
@@ -26,7 +25,7 @@ void main() {
     test('should return a valid model from JSON', () async {
       // arrange
       final Map<String, dynamic> jsonMap =
-          json.decode(readJson('dummy_data/tv/on_the_air.json'));
+          json.decode(readJson('dummy_data/on_the_air.json'));
       // act
       final result = TVResponse.fromJson(jsonMap);
       // assert

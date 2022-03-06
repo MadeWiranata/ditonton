@@ -1,5 +1,5 @@
 import 'package:bloc_test/bloc_test.dart';
-import 'package:core/domain/entities/tv/genre.dart';
+import 'package:core/domain/entities/genre.dart';
 import 'package:core/domain/usecases/movies/get_watchlist_movies.dart';
 import 'package:core/domain/usecases/movies/get_watchlist_status.dart';
 import 'package:core/domain/usecases/movies/remove_watchlist.dart';

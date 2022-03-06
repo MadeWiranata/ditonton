@@ -1,6 +1,6 @@
 // ignore_for_file: unnecessary_this
 
-import 'package:core/domain/entities/tv/genre.dart';
+import 'package:core/domain/entities/genre.dart';
 import 'package:equatable/equatable.dart';
 
 class TVGenreModel extends Equatable {
