@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, prefer_const_declarations
 
 import 'dart:io';
-import 'package:core/data/models/movies/genre_model.dart';
+import 'package:core/data/models/genre_model.dart';
 import 'package:core/utils/exception.dart';
 import 'package:core/utils/failure.dart';
 import 'package:dartz/dartz.dart';

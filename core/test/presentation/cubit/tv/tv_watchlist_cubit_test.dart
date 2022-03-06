@@ -1,4 +1,4 @@
-import 'package:core/domain/entities/tv/genre.dart';
+import 'package:core/domain/entities/genre.dart';
 import 'package:core/domain/usecases/tv/get_watchlist_status.dart';
 import 'package:core/domain/usecases/tv/get_watchlist_tv.dart';
 import 'package:core/domain/usecases/tv/remove_watchlist.dart';

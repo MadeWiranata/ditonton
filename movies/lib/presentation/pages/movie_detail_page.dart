@@ -1,5 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:core/domain/entities/tv/genre.dart';
+import 'package:core/domain/entities/genre.dart';
 import 'package:core/presentation/cubit/movies/watchlist_cubit.dart';
 import 'package:core/styles/colors.dart';
 import 'package:core/styles/text_style.dart';
