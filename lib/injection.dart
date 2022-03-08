@@ -9,7 +9,7 @@ import 'package:core/domain/usecases/tv/remove_watchlist.dart';
 import 'package:core/domain/usecases/tv/save_watchlist.dart';
 import 'package:core/presentation/cubit/movies/watchlist_cubit.dart';
 import 'package:core/presentation/cubit/tv/tvwatchlist_cubit.dart';
-import 'package:http/http.dart' as http;
+import 'package:core/utils/ssl_pinning.dart';
 import 'package:get_it/get_it.dart';
 import 'package:movies/data/datasource/movie_local_data_source.dart';
 import 'package:movies/data/datasource/movie_remote_data_source.dart';
@@ -166,5 +166,5 @@ void init() {
   locator.registerLazySingleton<DatabaseHelper>(() => DatabaseHelper());
 
   // external
-  locator.registerLazySingleton(() => http.Client());
+  locator.registerLazySingleton(() => HttpSSLPinning.client);
 }

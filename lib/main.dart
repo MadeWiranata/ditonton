@@ -6,6 +6,7 @@ import 'package:core/presentation/pages/movies/watchlist_movies_page.dart';
 import 'package:core/styles/colors.dart';
 import 'package:core/styles/text_style.dart';
 import 'package:core/utils/routes.dart';
+import 'package:core/utils/ssl_pinning.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -34,7 +35,9 @@ import 'package:movies/presentation/pages/popular_movies_page.dart';
 import 'package:movies/presentation/pages/top_rated_movies_page.dart';
 import 'package:core/utils/utils.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await HttpSSLPinning.init();
   di.init();
   runApp(const MyApp());
 }

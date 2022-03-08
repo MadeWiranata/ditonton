@@ -1,3 +1,6 @@
+// ignore_for_file: prefer_const_constructors
+
+import 'package:core/styles/colors.dart';
 import 'package:flutter/material.dart';
 
 class AboutPage extends StatelessWidget {
@@ -15,7 +18,7 @@ class AboutPage extends StatelessWidget {
             children: [
               Expanded(
                 child: Container(
-                  color: const Color(0xFF003566),
+                  color: kPrussianBlue,
                   child: Center(
                     child: Image.asset(
                       'assets/circle-g.png',
@@ -27,8 +30,8 @@ class AboutPage extends StatelessWidget {
               Expanded(
                 child: Container(
                   padding: const EdgeInsets.all(32.0),
-                  color: const Color(0xFFffc300),
-                  child: const Text(
+                  color: kMikadoYellow,
+                  child: Text(
                     'Ditonton merupakan sebuah aplikasi katalog film yang dikembangkan oleh Dicoding Indonesia sebagai contoh proyek aplikasi untuk kelas Menjadi Flutter Developer Expert.',
                     style: TextStyle(color: Colors.black87, fontSize: 16),
                     textAlign: TextAlign.justify,
@@ -40,7 +43,7 @@ class AboutPage extends StatelessWidget {
           SafeArea(
             child: IconButton(
               onPressed: () => Navigator.pop(context),
-              icon: const Icon(Icons.arrow_back),
+              icon: Icon(Icons.arrow_back),
             ),
           )
         ],
