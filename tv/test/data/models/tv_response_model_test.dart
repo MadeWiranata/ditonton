@@ -4,7 +4,7 @@ import 'dart:convert';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:tv/data/models/tv_model.dart';
 import 'package:tv/data/models/tv_response.dart';
-import '../../../../core/test/json_reader.dart';
+import '../../json_reader.dart';
 
 void main() {
   final tTVModel = TVModel(
