@@ -39,6 +39,8 @@ dependencies:
     path: movies
   tv:
     path: tv
+  firebase_core: ^1.6.0
+  firebase_crashlytics: ^2.5.3
 
 
   # The following adds the Cupertino Icons font to your application.

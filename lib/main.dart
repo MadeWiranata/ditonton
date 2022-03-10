@@ -7,6 +7,7 @@ import 'package:core/styles/colors.dart';
 import 'package:core/styles/text_style.dart';
 import 'package:core/utils/routes.dart';
 import 'package:core/utils/ssl_pinning.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -37,6 +38,7 @@ import 'package:core/utils/utils.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   await HttpSSLPinning.init();
   di.init();
   runApp(const MyApp());
